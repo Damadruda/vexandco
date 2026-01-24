@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VEX & Co — Strategic Consulting</title>
+  <meta name="description" content="VEX & Co — High-stakes consulting with boutique execution. Europe-first, global-ready strategic advisory." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>V</text></svg>">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="VEX & Co — Strategic Consulting" />
+  <meta property="og:description" content="High-stakes consulting with boutique execution. Europe-first, global-ready." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.vexandco.com" />
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper: #F9F8F6;
+      --ink: #1A1A1A;
+      --muted: #5E5E5E;
+      --line: rgba(26,26,26,.14);
+      --line-soft: rgba(26,26,26,.10);
+      --panel: #2D2D2D;
+      --panel-ink: #E7E7E7;
+
+      --serif: "Cormorant Garamond", ui-serif, Georgia, "Times New Roman", Times, serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+
+      --max: 1120px;
+      --gutter: 32px;
+      --radius: 14px;
+
+      --h1: clamp(40px, 4.2vw, 64px);
+      --h2: clamp(28px, 2.8vw, 44px);
+      --h3: clamp(18px, 1.6vw, 24px);
+      --body: 16px;
+      --small: 13px;
+
+      --lh-tight: 1.08;
+      --lh: 1.55;
+
+      --space-1: 10px;
+      --space-2: 16px;
+      --space-3: 24px;
+      --space-4: 40px;
+      --space-5: 64px;
+      --space-6: 96px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: var(--body);
+      line-height: var(--lh);
+      color: var(--ink);
+      background: var(--paper);
+      text-rendering: geometricPrecision;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a.underline { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a.underline:hover { opacity: .8; }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding-left: var(--gutter);
+      padding-right: var(--gutter);
+    }
+
+    /* NAV */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: color-mix(in srgb, var(--paper) 88%, transparent);
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .logo {
+      font-family: var(--serif);
+      font-weight: 600;
+      letter-spacing: .02em;
+      font-size: 20px;
+    }
+    .nav__right {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      font-size: var(--small);
+      color: var(--muted);
+    }
+    .nav__right a { color: var(--muted); }
+    .nav__right a:hover { color: var(--ink); }
+
+    .lang {
+      display: inline-flex;
+      gap: 10px;
+      align-items: baseline;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      user-select: none;
+    }
+    .lang button {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      padding: 0;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    .lang button:hover { color: var(--ink); }
+    .lang .active {
+      color: var(--ink);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: var(--space-6) 0;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: var(--h2);
+      line-height: var(--lh-tight);
+      margin: 0 0 var(--space-4);
+      letter-spacing: .01em;
+    }
+    .kicker {
+      font-size: var(--small);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 var(--space-2);
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: var(--space-6) 0 var(--space-6);
+      overflow: hidden;
+    }
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: var(--space-5);
+      align-items: start;
+    }
+    .hero__h1 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: var(--h1);
+      line-height: var(--lh-tight);
+      letter-spacing: .01em;
+      margin: 0;
+      max-width: 16ch;
+    }
+    .hero__p {
+      margin: var(--space-3) 0 0;
+      color: var(--muted);
+      max-width: 54ch;
+      font-size: 18px;
+      line-height: 1.65;
+    }
+    .hero__meta {
+      margin-top: var(--space-5);
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      color: var(--muted);
+      font-size: var(--small);
+      flex-wrap: wrap;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--paper) 88%, white);
+    }
+    .hero__right {
+      position: relative;
+      min-height: 320px;
+    }
+    .hero__art {
+      position: absolute;
+      inset: -40px -80px -40px -40px;
+      opacity: .45;
+      pointer-events: none;
+      filter: contrast(1.05);
+    }
+    .divider {
+      height: 1px;
+      background: var(--line-soft);
+      margin-top: var(--space-6);
+    }
+
+    /* APPROACH (4 principles) */
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 48px;
+    }
+    .principle {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 18px;
+    }
+    .num {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 44px;
+      line-height: 1;
+      color: rgba(26,26,26,.28);
+      letter-spacing: .02em;
+    }
+    .principle h3 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: var(--h3);
+      margin: 0;
+      line-height: 1.25;
+      letter-spacing: .01em;
+    }
+    .principle p {
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+
+    /* CAPABILITIES */
+    .capabilities {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      border-top: 1px solid var(--line-soft);
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .cap {
+      padding: 34px 0;
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 18px;
+    }
+    .cap + .cap { border-top: 1px solid var(--line-soft); }
+    .cap .tag {
+      font-size: var(--small);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-top: 6px;
+    }
+    .cap h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(22px, 2.1vw, 32px);
+      margin: 0;
+      line-height: 1.15;
+    }
+    .cap p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      max-width: 78ch;
+    }
+
+    /* NETWORK (dark panel) */
+    .network {
+      background: var(--panel);
+      color: var(--panel-ink);
+      padding: var(--space-6) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .network .section-title { color: #fff; }
+    .network .kicker { color: rgba(231,231,231,.72); }
+    .network p { color: rgba(231,231,231,.82); }
+    .network .lead {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(22px, 2.1vw, 30px);
+      line-height: 1.2;
+      margin: 0 0 var(--space-4);
+      color: #fff;
+      max-width: 28ch;
+    }
+    .network__grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .bullets {
+      margin: var(--space-4) 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 18px;
+    }
+    .bullets li {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      margin-top: 9px;
+      background: rgba(231,231,231,.65);
+    }
+    .network__art {
+      border: 1px solid rgba(231,231,231,.14);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: rgba(255,255,255,.03);
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+      padding: var(--space-6) 0;
+    }
+    .contact .title {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: var(--h2);
+      line-height: var(--lh-tight);
+      margin: 0 0 var(--space-2);
+    }
+    .contact .sub {
+      margin: 0 0 var(--space-4);
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    /* CONTACT FORM */
+    .contact-form {
+      max-width: 480px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .form-group {
+      margin-bottom: var(--space-3);
+    }
+    .form-group label {
+      display: block;
+      font-size: var(--small);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      font-family: var(--sans);
+      font-size: var(--body);
+      color: var(--ink);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--ink);
+      box-shadow: 0 0 0 3px rgba(26,26,26,.08);
+    }
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--muted);
+      opacity: 0.6;
+    }
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 32px;
+      background: var(--ink);
+      color: var(--paper);
+      border: none;
+      border-radius: 8px;
+      font-family: var(--sans);
+      font-size: var(--body);
+      font-weight: 500;
+      letter-spacing: .02em;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.1s ease;
+      width: 100%;
+    }
+    .btn-submit:hover {
+      background: #333;
+    }
+    .btn-submit:active {
+      transform: scale(0.98);
+    }
+    .form-note {
+      margin-top: var(--space-3);
+      font-size: var(--small);
+      color: var(--muted);
+      text-align: center;
+    }
+    .form-success {
+      padding: var(--space-4);
+      background: rgba(26,26,26,.04);
+      border-radius: var(--radius);
+      text-align: center;
+    }
+    .form-success h3 {
+      font-family: var(--serif);
+      font-size: var(--h3);
+      margin: 0 0 var(--space-2);
+    }
+    .form-success p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    footer {
+      padding: 44px 0 34px;
+      border-top: 1px solid var(--line-soft);
+      color: var(--muted);
+      font-size: var(--small);
+    }
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 22px;
+      align-items: start;
+    }
+    .footer__brand {
+      display: grid;
+      gap: 10px;
+    }
+    .footer__brand .logo { font-size: 18px; color: var(--ink); }
+    .footer__links {
+      display: inline-flex;
+      gap: 16px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+    .footer__links a { color: var(--muted); }
+    .footer__links a:hover { color: var(--ink); }
+
+    .footer__bottom {
+      margin-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--line-soft);
+      padding-top: 18px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero__grid { grid-template-columns: 1fr; }
+      .hero__right { min-height: 220px; }
+      .principles { grid-template-columns: 1fr; }
+      .network__grid { grid-template-columns: 1fr; }
+      .cap { grid-template-columns: 54px 1fr; }
+      .footer__grid { grid-template-columns: 1fr; }
+      .footer__links { justify-content: flex-start; }
+    }
+    
+    @media (max-width: 480px) {
+      :root {
+        --gutter: 20px;
+      }
+      .hero__meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .principle {
+        grid-template-columns: 44px 1fr;
+        gap: 14px;
+      }
+      .num {
+        font-size: 36px;
+      }
+      .cap {
+        grid-template-columns: 44px 1fr;
+        gap: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" role="banner">
+    <div class="wrap nav__inner">
+      <a class="logo" href="#top" aria-label="VEX & Co">VEX & Co</a>
+      <div class="nav__right">
+        <a href="#contact" class="underline" data-i18n="nav.contact">Contact</a>
+        <div class="lang" aria-label="Language selector">
+          <button id="btn-es" type="button">ES</button>
+          <span style="opacity:.55">|</span>
+          <button id="btn-en" type="button">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="top" class="hero" role="main">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="kicker" data-i18n="hero.kicker">Boutique consulting</p>
+        <h1 class="hero__h1" data-i18n="hero.h1">High-Stakes Consulting.<br/>Boutique Execution.</h1>
+        <p class="hero__p" data-i18n="hero.p">We bridge the gap between strategy and real-world impact through a multilateral network of partners.</p>
+
+        <div class="hero__meta" aria-label="Meta">
+          <span class="pill" data-i18n="hero.meta1">No fluff. Just execution.</span>
+          <span class="pill" data-i18n="hero.meta2">Europe-first. Global-ready.</span>
+        </div>
+
+        <div class="divider" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero__right" aria-hidden="true">
+        <svg class="hero__art" viewBox="0 0 900 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="rgba(26,26,26,0.16)" stroke-width="1.1">
+            <path d="M70 520 C180 440, 250 520, 340 450 C430 380, 500 430, 610 360 C720 290, 780 320, 860 250"/>
+            <path d="M90 590 C210 500, 270 590, 360 520 C450 450, 540 470, 650 410 C760 350, 820 380, 890 320"/>
+            <path d="M110 650 C240 560, 300 650, 390 580 C480 510, 580 520, 690 470 C800 420, 860 450, 920 400"/>
+            <path d="M560 40 C520 120, 600 180, 520 260 C440 340, 520 390, 460 480 C400 570, 470 610, 440 690"/>
+            <path d="M640 30 C600 120, 690 170, 610 270 C530 370, 610 410, 550 510 C490 610, 560 650, 530 720"/>
+            <path d="M160 120 C260 80, 320 160, 420 120 C520 80, 580 140, 680 100 C780 60, 840 100, 900 70"/>
+          </g>
+          <g fill="rgba(26,26,26,0.22)">
+            <circle cx="610" cy="360" r="3"/>
+            <circle cx="520" cy="260" r="3"/>
+            <circle cx="340" cy="450" r="3"/>
+            <circle cx="680" cy="100" r="3"/>
+            <circle cx="420" cy="120" r="3"/>
+            <circle cx="860" cy="250" r="3"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </main>
+
+  <!-- APPROACH -->
+  <section id="approach">
+    <div class="wrap">
+      <p class="kicker" data-i18n="approach.kicker">Our approach</p>
+      <h2 class="section-title" data-i18n="approach.h2">Principles that guide every engagement.</h2>
+
+      <div class="principles">
+        <article class="principle">
+          <div class="num">01</div>
+          <div>
+            <h3 data-i18n="p1.h">Multilateral Criterion</h3>
+            <p data-i18n="p1.p">Cross-market learning and international perspective inform every decision.</p>
+          </div>
+        </article>
+
+        <article class="principle">
+          <div class="num">02</div>
+          <div>
+            <h3 data-i18n="p2.h">Strategic Clarity</h3>
+            <p data-i18n="p2.p">Synthesis over complexity. We distill complex challenges into actionable insight.</p>
+          </div>
+        </article>
+
+        <article class="principle">
+          <div class="num">03</div>
+          <div>
+            <h3 data-i18n="p3.h">Expert Articulation</h3>
+            <p data-i18n="p3.p">We orchestrate the right capabilities and partners for each project.</p>
+          </div>
+        </article>
+
+        <article class="principle">
+          <div class="num">04</div>
+          <div>
+            <h3 data-i18n="p4.h">Commitment to Execution</h3>
+            <p data-i18n="p4.p">Strategy means nothing without real-world impact. We own the results.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES -->
+  <section id="capabilities">
+    <div class="wrap">
+      <p class="kicker" data-i18n="caps.kicker">Capabilities</p>
+      <h2 class="section-title" data-i18n="caps.h2">Three ways we help clients move forward.</h2>
+
+      <div class="capabilities" role="list">
+        <div class="cap" role="listitem">
+          <div class="tag">[01]</div>
+          <div>
+            <h3 data-i18n="c1.h">Strategic Advisory & Market Entry</h3>
+            <p data-i18n="c1.p">We design the roadmap for international expansion and business model optimization, ensuring a solid foundation for growth.</p>
+          </div>
+        </div>
+
+        <div class="cap" role="listitem">
+          <div class="tag">[02]</div>
+          <div>
+            <h3 data-i18n="c2.h">Operational Excellence & Articulation</h3>
+            <p data-i18n="c2.p">We orchestrate specialized teams and resources to streamline processes, improve efficiency, and bridge the gap between plan and action.</p>
+          </div>
+        </div>
+
+        <div class="cap" role="listitem">
+          <div class="tag">[03]</div>
+          <div>
+            <h3 data-i18n="c3.h">Multilateral Project Management</h3>
+            <p data-i18n="c3.p">End-to-end oversight of complex projects across different markets, maintaining strategic alignment and delivering tangible results.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE NETWORK -->
+  <section class="network" id="network">
+    <div class="wrap">
+      <p class="kicker" data-i18n="net.kicker">The network</p>
+      <div class="network__grid">
+        <div>
+          <h2 class="section-title" data-i18n="net.h2">We don't do everything. We do what matters.</h2>
+          <p class="lead" data-i18n="net.lead">A curated network of trusted partners—assembled per challenge.</p>
+          <p data-i18n="net.p">Our strength lies in our ability to articulate the right partners and specialists for each challenge. We maintain a curated network of trusted collaborators across markets, sectors, and disciplines.</p>
+
+          <ul class="bullets" aria-label="Benefits">
+            <li><span class="dot" aria-hidden="true"></span><span data-i18n="net.b1">You get access to world-class expertise without the overhead of a large firm.</span></li>
+            <li><span class="dot" aria-hidden="true"></span><span data-i18n="net.b2">Every project is staffed with the exact capabilities needed—no padding, no compromise.</span></li>
+            <li><span class="dot" aria-hidden="true"></span><span data-i18n="net.b3">We move fast because we know who to call and how to work together seamlessly.</span></li>
+          </ul>
+        </div>
+
+        <aside class="network__art" aria-label="Network diagram">
+          <svg viewBox="0 0 520 420" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract network diagram">
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="rgba(231,231,231,.55)" />
+                <stop offset="1" stop-color="rgba(231,231,231,.12)" />
+              </linearGradient>
+            </defs>
+            <g stroke="url(#g)" stroke-width="1.1" fill="none">
+              <path d="M70 320 C140 250, 170 270, 230 220 C290 170, 340 180, 420 120" />
+              <path d="M80 120 C140 160, 170 150, 240 190 C310 230, 350 250, 430 300" />
+              <path d="M120 350 C190 300, 240 310, 300 260 C360 210, 410 220, 460 190" />
+              <path d="M140 80 C210 120, 240 110, 300 140 C360 170, 400 180, 470 150" />
+              <path d="M110 210 C170 220, 220 240, 280 230 C340 220, 370 190, 430 170" />
+            </g>
+            <g fill="rgba(231,231,231,.78)">
+              <circle cx="70" cy="320" r="4" />
+              <circle cx="230" cy="220" r="4" />
+              <circle cx="420" cy="120" r="4" />
+              <circle cx="80" cy="120" r="4" />
+              <circle cx="240" cy="190" r="4" />
+              <circle cx="430" cy="300" r="4" />
+              <circle cx="300" cy="260" r="4" />
+              <circle cx="470" cy="150" r="4" />
+              <circle cx="430" cy="170" r="4" />
+            </g>
+          </svg>
+          <p style="margin:16px 0 0; font-size:13px; color: rgba(231,231,231,.75);" data-i18n="net.note">
+            Diagram is illustrative. Partners are selected per context, market, and scope.
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2 class="title" data-i18n="contact.h2">Let's Talk</h2>
+      <p class="sub" data-i18n="contact.p">Ready to explore how we can help?</p>
+      
+      <div class="contact-form" id="contact-form-container">
+        <form id="contact-form" action="https://formspree.io/f/xpwzgkpq" method="POST">
+          <div class="form-group">
+            <label for="name" data-i18n="form.name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="email" data-i18n="form.email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="company" data-i18n="form.company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Your company (optional)">
+          </div>
+          <div class="form-group">
+            <label for="message" data-i18n="form.message">Message</label>
+            <textarea id="message" name="message" required placeholder="Tell us about your project or challenge..."></textarea>
+          </div>
+          <input type="hidden" name="_subject" value="New inquiry from VEX & Co website">
+          <button type="submit" class="btn-submit" data-i18n="form.submit">Send Message</button>
+        </form>
+        <p class="form-note" data-i18n="form.note">We typically respond within 24-48 hours.</p>
+      </div>
+      
+      <div class="form-success" id="form-success" style="display: none;">
+        <h3 data-i18n="form.success.title">Message Sent</h3>
+        <p data-i18n="form.success.text">Thank you for reaching out. We'll be in touch soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="logo">VEX & Co</div>
+          <div data-i18n="footer.tag">Strategic Clarity. Global Reach.</div>
+        </div>
+        <nav class="footer__links" aria-label="Social">
+          <a href="#" class="underline" data-i18n="footer.linkedin">LinkedIn</a>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <div data-i18n="footer.copy">© 2026 VEX & Co. All rights reserved.</div>
+        <div class="footer__links" aria-label="Legal">
+          <a href="#" class="underline" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="#" class="underline" data-i18n="footer.terms">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const dict = {
+      en: {
+        "nav.contact": "Contact",
+        "hero.kicker": "Boutique consulting",
+        "hero.h1": "High-Stakes Consulting.<br/>Boutique Execution.",
+        "hero.p": "We bridge the gap between strategy and real-world impact through a multilateral network of partners.",
+        "hero.meta1": "No fluff. Just execution.",
+        "hero.meta2": "Europe-first. Global-ready.",
+        "approach.kicker": "Our approach",
+        "approach.h2": "Principles that guide every engagement.",
+        "p1.h": "Multilateral Criterion",
+        "p1.p": "Cross-market learning and international perspective inform every decision.",
+        "p2.h": "Strategic Clarity",
+        "p2.p": "Synthesis over complexity. We distill complex challenges into actionable insight.",
+        "p3.h": "Expert Articulation",
+        "p3.p": "We orchestrate the right capabilities and partners for each project.",
+        "p4.h": "Commitment to Execution",
+        "p4.p": "Strategy means nothing without real-world impact. We own the results.",
+        "caps.kicker": "Capabilities",
+        "caps.h2": "Three ways we help clients move forward.",
+        "c1.h": "Strategic Advisory & Market Entry",
+        "c1.p": "We design the roadmap for international expansion and business model optimization, ensuring a solid foundation for growth.",
+        "c2.h": "Operational Excellence & Articulation",
+        "c2.p": "We orchestrate specialized teams and resources to streamline processes, improve efficiency, and bridge the gap between plan and action.",
+        "c3.h": "Multilateral Project Management",
+        "c3.p": "End-to-end oversight of complex projects across different markets, maintaining strategic alignment and delivering tangible results.",
+        "net.kicker": "The network",
+        "net.h2": "We don't do everything. We do what matters.",
+        "net.lead": "A curated network of trusted partners—assembled per challenge.",
+        "net.p": "Our strength lies in our ability to articulate the right partners and specialists for each challenge. We maintain a curated network of trusted collaborators across markets, sectors, and disciplines.",
+        "net.b1": "You get access to world-class expertise without the overhead of a large firm.",
+        "net.b2": "Every project is staffed with the exact capabilities needed—no padding, no compromise.",
+        "net.b3": "We move fast because we know who to call and how to work together seamlessly.",
+        "net.note": "Diagram is illustrative. Partners are selected per context, market, and scope.",
+        "contact.h2": "Let's Talk",
+        "contact.p": "Ready to explore how we can help?",
+        "form.name": "Name",
+        "form.email": "Email",
+        "form.company": "Company",
+        "form.message": "Message",
+        "form.submit": "Send Message",
+        "form.note": "We typically respond within 24-48 hours.",
+        "form.success.title": "Message Sent",
+        "form.success.text": "Thank you for reaching out. We'll be in touch soon.",
+        "footer.tag": "Strategic Clarity. Global Reach.",
+        "footer.linkedin": "LinkedIn",
+        "footer.copy": "© 2026 VEX & Co. All rights reserved.",
+        "footer.privacy": "Privacy Policy",
+        "footer.terms": "Terms of Use",
+      },
+      es: {
+        "nav.contact": "Contacto",
+        "hero.kicker": "Consultoría boutique",
+        "hero.h1": "Consultoría de Alto Impacto.<br/>Ejecución Boutique.",
+        "hero.p": "Conectamos la estrategia con el impacto real a través de una red multilateral de socios estratégicos.",
+        "hero.meta1": "Sin rodeos. Solo ejecución.",
+        "hero.meta2": "Europa primero. Listos para global.",
+        "approach.kicker": "Nuestro enfoque",
+        "approach.h2": "Principios que guían cada colaboración.",
+        "p1.h": "Criterio Multilateral",
+        "p1.p": "El aprendizaje entre mercados y la perspectiva internacional informan cada decisión.",
+        "p2.h": "Claridad Estratégica",
+        "p2.p": "Síntesis sobre complejidad. Destilamos retos complejos en insights accionables.",
+        "p3.h": "Articulación Experta",
+        "p3.p": "Orquestamos las capacidades y socios adecuados para cada proyecto.",
+        "p4.h": "Compromiso con la Ejecución",
+        "p4.p": "La estrategia sin impacto real no vale nada. Nos responsabilizamos de los resultados.",
+        "caps.kicker": "Capacidades",
+        "caps.h2": "Tres formas en las que ayudamos a avanzar.",
+        "c1.h": "Asesoría Estratégica y Entrada a Mercados",
+        "c1.p": "Diseñamos la hoja de ruta para la expansión internacional y la optimización de modelos de negocio, asegurando una base sólida para el crecimiento.",
+        "c2.h": "Excelencia Operativa y Articulación",
+        "c2.p": "Orquestamos equipos y recursos especializados para agilizar procesos, mejorar la eficiencia y cerrar la brecha entre el plan y la acción.",
+        "c3.h": "Gestión de Proyectos Multilaterales",
+        "c3.p": "Supervisión integral de proyectos complejos en diferentes mercados, manteniendo la alineación estratégica y entregando resultados tangibles.",
+        "net.kicker": "La red",
+        "net.h2": "No hacemos todo. Hacemos lo que importa.",
+        "net.lead": "Una red curada de socios de confianza—armada según el reto.",
+        "net.p": "Nuestra fortaleza radica en la capacidad de articular los socios y especialistas adecuados para cada reto. Mantenemos una red curada de colaboradores de confianza en diferentes mercados, sectores y disciplinas.",
+        "net.b1": "Accedes a expertise de clase mundial sin la sobrecarga de una gran firma.",
+        "net.b2": "Cada proyecto se equipa con las capacidades exactas necesarias—sin relleno, sin compromisos.",
+        "net.b3": "Nos movemos rápido porque sabemos a quién llamar y cómo trabajar juntos sin fricciones.",
+        "net.note": "El diagrama es ilustrativo. Los socios se seleccionan según contexto, mercado y alcance.",
+        "contact.h2": "Hablemos",
+        "contact.p": "¿Listo para explorar cómo podemos ayudarte?",
+        "form.name": "Nombre",
+        "form.email": "Correo electrónico",
+        "form.company": "Empresa",
+        "form.message": "Mensaje",
+        "form.submit": "Enviar Mensaje",
+        "form.note": "Normalmente respondemos en 24-48 horas.",
+        "form.success.title": "Mensaje Enviado",
+        "form.success.text": "Gracias por contactarnos. Te responderemos pronto.",
+        "footer.tag": "Claridad Estratégica. Alcance Global.",
+        "footer.linkedin": "LinkedIn",
+        "footer.copy": "© 2026 VEX & Co. Todos los derechos reservados.",
+        "footer.privacy": "Política de Privacidad",
+        "footer.terms": "Términos de Uso",
+      }
+    };
+
+    const placeholders = {
+      en: { name: "Your name", email: "your@email.com", company: "Your company (optional)", message: "Tell us about your project or challenge..." },
+      es: { name: "Tu nombre", email: "tu@correo.com", company: "Tu empresa (opcional)", message: "Cuéntanos sobre tu proyecto o reto..." }
+    };
+
+    const els = () => Array.from(document.querySelectorAll('[data-i18n]'));
+
+    function setLang(lang) {
+      const d = dict[lang];
+      const p = placeholders[lang];
+      if (!d) return;
+
+      els().forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const val = d[key];
+        if (typeof val === 'string') el.innerHTML = val;
+      });
+
+      if (p) {
+        document.getElementById('name').placeholder = p.name;
+        document.getElementById('email').placeholder = p.email;
+        document.getElementById('company').placeholder = p.company;
+        document.getElementById('message').placeholder = p.message;
+      }
+
+      document.documentElement.lang = lang;
+      localStorage.setItem('vex_lang', lang);
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+    }
+
+    document.getElementById('btn-en').addEventListener('click', () => setLang('en'));
+    document.getElementById('btn-es').addEventListener('click', () => setLang('es'));
+
+    const form = document.getElementById('contact-form');
+    const formContainer = document.getElementById('contact-form-container');
+    const successMessage = document.getElementById('form-success');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('.btn-submit');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '...';
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          formContainer.style.display = 'none';
+          successMessage.style.display = 'block';
+          form.reset();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (error) {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        alert('Something went wrong. Please try again or email us directly at hello@vexandco.com');
+      }
+    });
+
+    const saved = localStorage.getItem('vex_lang');
+    setLang(saved || 'en');
+  </script>
+</body>
+</html>
