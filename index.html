@@ -4,18 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VEX & Co — Strategic Consulting</title>
-  <meta name="description" content="VEX & Co — High-stakes consulting with boutique execution. Europe-first, global-ready strategic advisory." />
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>V</text></svg>">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="VEX & Co — Strategic Consulting" />
-  <meta property="og:description" content="High-stakes consulting with boutique execution. Europe-first, global-ready." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.vexandco.com" />
+  <meta name="description" content="VEX & Co — Cross-border consulting. The right perspective. The right people." />
 
-  <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -55,7 +45,6 @@
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     html, body { height: 100%; }
     body {
       margin: 0;
@@ -126,9 +115,7 @@
       font: inherit;
       padding: 0;
       cursor: pointer;
-      transition: color 0.2s ease;
     }
-    .lang button:hover { color: var(--ink); }
     .lang .active {
       color: var(--ink);
       text-decoration: underline;
@@ -191,7 +178,6 @@
       align-items: center;
       color: var(--muted);
       font-size: var(--small);
-      flex-wrap: wrap;
     }
     .pill {
       display: inline-flex;
@@ -355,95 +341,16 @@
       color: var(--muted);
       font-size: 18px;
     }
-
-    /* CONTACT FORM */
-    .contact-form {
-      max-width: 480px;
-      margin: 0 auto;
-      text-align: left;
-    }
-    .form-group {
-      margin-bottom: var(--space-3);
-    }
-    .form-group label {
-      display: block;
-      font-size: var(--small);
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 14px 16px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #fff;
-      font-family: var(--sans);
-      font-size: var(--body);
+    .email {
+      display: inline-block;
+      font-size: clamp(18px, 2.2vw, 28px);
+      letter-spacing: .01em;
       color: var(--ink);
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 6px;
     }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--ink);
-      box-shadow: 0 0 0 3px rgba(26,26,26,.08);
-    }
-    .form-group textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: var(--muted);
-      opacity: 0.6;
-    }
-    .btn-submit {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 32px;
-      background: var(--ink);
-      color: var(--paper);
-      border: none;
-      border-radius: 8px;
-      font-family: var(--sans);
-      font-size: var(--body);
-      font-weight: 500;
-      letter-spacing: .02em;
-      cursor: pointer;
-      transition: background 0.2s ease, transform 0.1s ease;
-      width: 100%;
-    }
-    .btn-submit:hover {
-      background: #333;
-    }
-    .btn-submit:active {
-      transform: scale(0.98);
-    }
-    .form-note {
-      margin-top: var(--space-3);
-      font-size: var(--small);
-      color: var(--muted);
-      text-align: center;
-    }
-    .form-success {
-      padding: var(--space-4);
-      background: rgba(26,26,26,.04);
-      border-radius: var(--radius);
-      text-align: center;
-    }
-    .form-success h3 {
-      font-family: var(--serif);
-      font-size: var(--h3);
-      margin: 0 0 var(--space-2);
-    }
-    .form-success p {
-      color: var(--muted);
-      margin: 0;
-    }
+    .email:hover { opacity: .82; }
 
     footer {
       padding: 44px 0 34px;
@@ -491,28 +398,6 @@
       .footer__grid { grid-template-columns: 1fr; }
       .footer__links { justify-content: flex-start; }
     }
-    
-    @media (max-width: 480px) {
-      :root {
-        --gutter: 20px;
-      }
-      .hero__meta {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-      }
-      .principle {
-        grid-template-columns: 44px 1fr;
-        gap: 14px;
-      }
-      .num {
-        font-size: 36px;
-      }
-      .cap {
-        grid-template-columns: 44px 1fr;
-        gap: 14px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -536,8 +421,8 @@
   <main id="top" class="hero" role="main">
     <div class="wrap hero__grid">
       <div>
-        <p class="kicker" data-i18n="hero.kicker">Boutique consulting</p>
-        <h1 class="hero__h1" data-i18n="hero.h1">High-Stakes Consulting.<br/>Boutique Execution.</h1>
+        <p class="kicker" data-i18n="hero.kicker">Cross-border consulting</p>
+        <h1 class="hero__h1" data-i18n="hero.h1">High-Stakes Challenges.<br/>Hands-On Execution.</h1>
         <p class="hero__p" data-i18n="hero.p">We bridge the gap between strategy and real-world impact through a multilateral network of partners.</p>
 
         <div class="hero__meta" aria-label="Meta">
@@ -549,15 +434,19 @@
       </div>
 
       <div class="hero__right" aria-hidden="true">
+        <!-- Subtle abstract line art (inline SVG) -->
         <svg class="hero__art" viewBox="0 0 900 700" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g stroke="rgba(26,26,26,0.16)" stroke-width="1.1">
             <path d="M70 520 C180 440, 250 520, 340 450 C430 380, 500 430, 610 360 C720 290, 780 320, 860 250"/>
             <path d="M90 590 C210 500, 270 590, 360 520 C450 450, 540 470, 650 410 C760 350, 820 380, 890 320"/>
             <path d="M110 650 C240 560, 300 650, 390 580 C480 510, 580 520, 690 470 C800 420, 860 450, 920 400"/>
+
             <path d="M560 40 C520 120, 600 180, 520 260 C440 340, 520 390, 460 480 C400 570, 470 610, 440 690"/>
             <path d="M640 30 C600 120, 690 170, 610 270 C530 370, 610 410, 550 510 C490 610, 560 650, 530 720"/>
+
             <path d="M160 120 C260 80, 320 160, 420 120 C520 80, 580 140, 680 100 C780 60, 840 100, 900 70"/>
           </g>
+
           <g fill="rgba(26,26,26,0.22)">
             <circle cx="610" cy="360" r="3"/>
             <circle cx="520" cy="260" r="3"/>
@@ -571,7 +460,7 @@
     </div>
   </main>
 
-  <!-- APPROACH -->
+  <!-- APPROACH (4 Principles) -->
   <section id="approach">
     <div class="wrap">
       <p class="kicker" data-i18n="approach.kicker">Our approach</p>
@@ -623,7 +512,7 @@
         <div class="cap" role="listitem">
           <div class="tag">[01]</div>
           <div>
-            <h3 data-i18n="c1.h">Strategic Advisory & Market Entry</h3>
+            <h3 data-i18n="c1.h">Market Entry &amp; Growth Strategy</h3>
             <p data-i18n="c1.p">We design the roadmap for international expansion and business model optimization, ensuring a solid foundation for growth.</p>
           </div>
         </div>
@@ -631,7 +520,7 @@
         <div class="cap" role="listitem">
           <div class="tag">[02]</div>
           <div>
-            <h3 data-i18n="c2.h">Operational Excellence & Articulation</h3>
+            <h3 data-i18n="c2.h">Operations &amp; Partner Orchestration</h3>
             <p data-i18n="c2.p">We orchestrate specialized teams and resources to streamline processes, improve efficiency, and bridge the gap between plan and action.</p>
           </div>
         </div>
@@ -654,8 +543,8 @@
       <div class="network__grid">
         <div>
           <h2 class="section-title" data-i18n="net.h2">We don't do everything. We do what matters.</h2>
-          <p class="lead" data-i18n="net.lead">A curated network of trusted partners—assembled per challenge.</p>
-          <p data-i18n="net.p">Our strength lies in our ability to articulate the right partners and specialists for each challenge. We maintain a curated network of trusted collaborators across markets, sectors, and disciplines.</p>
+          <p class="lead" data-i18n="net.lead">A trusted network of specialists—assembled per challenge.</p>
+          <p data-i18n="net.p">Our strength lies in our ability to bring together the right partners and specialists for each challenge. We maintain a trusted network of collaborators across markets, sectors, and disciplines.</p>
 
           <ul class="bullets" aria-label="Benefits">
             <li><span class="dot" aria-hidden="true"></span><span data-i18n="net.b1">You get access to world-class expertise without the overhead of a large firm.</span></li>
@@ -664,35 +553,63 @@
           </ul>
         </div>
 
-        <aside class="network__art" aria-label="Network diagram">
-          <svg viewBox="0 0 520 420" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract network diagram">
+        <aside class="network__art" aria-label="Network map">
+          <!-- Map showing Madrid connected to key regions -->
+          <svg viewBox="0 0 520 420" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Network map from Madrid">
             <defs>
               <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
                 <stop offset="0" stop-color="rgba(231,231,231,.55)" />
                 <stop offset="1" stop-color="rgba(231,231,231,.12)" />
               </linearGradient>
             </defs>
-            <g stroke="url(#g)" stroke-width="1.1" fill="none">
-              <path d="M70 320 C140 250, 170 270, 230 220 C290 170, 340 180, 420 120" />
-              <path d="M80 120 C140 160, 170 150, 240 190 C310 230, 350 250, 430 300" />
-              <path d="M120 350 C190 300, 240 310, 300 260 C360 210, 410 220, 460 190" />
-              <path d="M140 80 C210 120, 240 110, 300 140 C360 170, 400 180, 470 150" />
-              <path d="M110 210 C170 220, 220 240, 280 230 C340 220, 370 190, 430 170" />
+            
+            <!-- Connection lines from Madrid (center) to regions -->
+            <g stroke="url(#g)" stroke-width="1.5" fill="none">
+              <!-- Madrid to LATAM (left) -->
+              <path d="M260 210 Q 120 280, 60 320" />
+              <!-- Madrid to Northern Europe -->
+              <path d="M260 210 Q 300 120, 380 80" />
+              <!-- Madrid to Central Europe -->
+              <path d="M260 210 Q 360 180, 450 160" />
+              <!-- Madrid to UK -->
+              <path d="M260 210 Q 200 140, 180 90" />
+              <!-- Madrid to Mediterranean -->
+              <path d="M260 210 Q 340 260, 420 300" />
+              <!-- Madrid to Americas -->
+              <path d="M260 210 Q 140 200, 70 150" />
             </g>
-            <g fill="rgba(231,231,231,.78)">
-              <circle cx="70" cy="320" r="4" />
-              <circle cx="230" cy="220" r="4" />
-              <circle cx="420" cy="120" r="4" />
-              <circle cx="80" cy="120" r="4" />
-              <circle cx="240" cy="190" r="4" />
-              <circle cx="430" cy="300" r="4" />
-              <circle cx="300" cy="260" r="4" />
-              <circle cx="470" cy="150" r="4" />
-              <circle cx="430" cy="170" r="4" />
+            
+            <!-- Region nodes with labels -->
+            <g fill="rgba(231,231,231,.85)">
+              <!-- Madrid (center, larger) -->
+              <circle cx="260" cy="210" r="8" />
+              <!-- LATAM -->
+              <circle cx="60" cy="320" r="5" />
+              <!-- Northern Europe -->
+              <circle cx="380" cy="80" r="5" />
+              <!-- Central Europe -->
+              <circle cx="450" cy="160" r="5" />
+              <!-- UK -->
+              <circle cx="180" cy="90" r="5" />
+              <!-- Mediterranean -->
+              <circle cx="420" cy="300" r="5" />
+              <!-- Americas -->
+              <circle cx="70" cy="150" r="5" />
+            </g>
+            
+            <!-- Labels -->
+            <g fill="rgba(231,231,231,.6)" font-family="Inter, sans-serif" font-size="11">
+              <text x="260" y="240" text-anchor="middle">Madrid</text>
+              <text x="60" y="345" text-anchor="middle">LATAM</text>
+              <text x="380" y="65" text-anchor="middle">Nordics</text>
+              <text x="450" y="145" text-anchor="middle">DACH</text>
+              <text x="180" y="75" text-anchor="middle">UK</text>
+              <text x="420" y="325" text-anchor="middle">Med</text>
+              <text x="70" y="135" text-anchor="middle">US</text>
             </g>
           </svg>
           <p style="margin:16px 0 0; font-size:13px; color: rgba(231,231,231,.75);" data-i18n="net.note">
-            Diagram is illustrative. Partners are selected per context, market, and scope.
+            Based in Madrid. Network spans Europe, Americas, and beyond.
           </p>
         </aside>
       </div>
@@ -704,35 +621,7 @@
     <div class="wrap">
       <h2 class="title" data-i18n="contact.h2">Let's Talk</h2>
       <p class="sub" data-i18n="contact.p">Ready to explore how we can help?</p>
-      
-      <div class="contact-form" id="contact-form-container">
-        <form id="contact-form" action="https://formspree.io/f/xpwzgkpq" method="POST">
-          <div class="form-group">
-            <label for="name" data-i18n="form.name">Name</label>
-            <input type="text" id="name" name="name" required placeholder="Your name">
-          </div>
-          <div class="form-group">
-            <label for="email" data-i18n="form.email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="your@email.com">
-          </div>
-          <div class="form-group">
-            <label for="company" data-i18n="form.company">Company</label>
-            <input type="text" id="company" name="company" placeholder="Your company (optional)">
-          </div>
-          <div class="form-group">
-            <label for="message" data-i18n="form.message">Message</label>
-            <textarea id="message" name="message" required placeholder="Tell us about your project or challenge..."></textarea>
-          </div>
-          <input type="hidden" name="_subject" value="New inquiry from VEX & Co website">
-          <button type="submit" class="btn-submit" data-i18n="form.submit">Send Message</button>
-        </form>
-        <p class="form-note" data-i18n="form.note">We typically respond within 24-48 hours.</p>
-      </div>
-      
-      <div class="form-success" id="form-success" style="display: none;">
-        <h3 data-i18n="form.success.title">Message Sent</h3>
-        <p data-i18n="form.success.text">Thank you for reaching out. We'll be in touch soon.</p>
-      </div>
+      <a class="email" href="mailto:hello@vexandco.com">hello@vexandco.com</a>
     </div>
   </section>
 
@@ -741,16 +630,16 @@
     <div class="wrap">
       <div class="footer__grid">
         <div class="footer__brand">
-          <div class="logo">VEX & Co</div>
-          <div data-i18n="footer.tag">Strategic Clarity. Global Reach.</div>
+          <div class="logo">VEX &amp; Co</div>
+          <div data-i18n="footer.tag">The right perspective. The right people.</div>
         </div>
         <nav class="footer__links" aria-label="Social">
-          <a href="#" class="underline" data-i18n="footer.linkedin">LinkedIn</a>
+          <a href="https://www.linkedin.com/company/vexandco" class="underline" target="_blank" data-i18n="footer.linkedin">LinkedIn</a>
         </nav>
       </div>
 
       <div class="footer__bottom">
-        <div data-i18n="footer.copy">© 2026 VEX & Co. All rights reserved.</div>
+        <div data-i18n="footer.copy">© 2026 VEX &amp; Co. All rights reserved.</div>
         <div class="footer__links" aria-label="Legal">
           <a href="#" class="underline" data-i18n="footer.privacy">Privacy Policy</a>
           <a href="#" class="underline" data-i18n="footer.terms">Terms of Use</a>
@@ -760,14 +649,17 @@
   </footer>
 
   <script>
+    // i18n dictionary - Updated content
     const dict = {
       en: {
         "nav.contact": "Contact",
-        "hero.kicker": "Boutique consulting",
-        "hero.h1": "High-Stakes Consulting.<br/>Boutique Execution.",
+
+        "hero.kicker": "Cross-border consulting",
+        "hero.h1": "High-Stakes Challenges.<br/>Hands-On Execution.",
         "hero.p": "We bridge the gap between strategy and real-world impact through a multilateral network of partners.",
         "hero.meta1": "No fluff. Just execution.",
         "hero.meta2": "Europe-first. Global-ready.",
+
         "approach.kicker": "Our approach",
         "approach.h2": "Principles that guide every engagement.",
         "p1.h": "Multilateral Criterion",
@@ -778,33 +670,29 @@
         "p3.p": "We orchestrate the right capabilities and partners for each project.",
         "p4.h": "Commitment to Execution",
         "p4.p": "Strategy means nothing without real-world impact. We own the results.",
+
         "caps.kicker": "Capabilities",
         "caps.h2": "Three ways we help clients move forward.",
-        "c1.h": "Strategic Advisory & Market Entry",
+        "c1.h": "Market Entry & Growth Strategy",
         "c1.p": "We design the roadmap for international expansion and business model optimization, ensuring a solid foundation for growth.",
-        "c2.h": "Operational Excellence & Articulation",
+        "c2.h": "Operations & Partner Orchestration",
         "c2.p": "We orchestrate specialized teams and resources to streamline processes, improve efficiency, and bridge the gap between plan and action.",
         "c3.h": "Multilateral Project Management",
         "c3.p": "End-to-end oversight of complex projects across different markets, maintaining strategic alignment and delivering tangible results.",
+
         "net.kicker": "The network",
         "net.h2": "We don't do everything. We do what matters.",
-        "net.lead": "A curated network of trusted partners—assembled per challenge.",
-        "net.p": "Our strength lies in our ability to articulate the right partners and specialists for each challenge. We maintain a curated network of trusted collaborators across markets, sectors, and disciplines.",
+        "net.lead": "A trusted network of specialists—assembled per challenge.",
+        "net.p": "Our strength lies in our ability to bring together the right partners and specialists for each challenge. We maintain a trusted network of collaborators across markets, sectors, and disciplines.",
         "net.b1": "You get access to world-class expertise without the overhead of a large firm.",
         "net.b2": "Every project is staffed with the exact capabilities needed—no padding, no compromise.",
         "net.b3": "We move fast because we know who to call and how to work together seamlessly.",
-        "net.note": "Diagram is illustrative. Partners are selected per context, market, and scope.",
+        "net.note": "Based in Madrid. Network spans Europe, Americas, and beyond.",
+
         "contact.h2": "Let's Talk",
         "contact.p": "Ready to explore how we can help?",
-        "form.name": "Name",
-        "form.email": "Email",
-        "form.company": "Company",
-        "form.message": "Message",
-        "form.submit": "Send Message",
-        "form.note": "We typically respond within 24-48 hours.",
-        "form.success.title": "Message Sent",
-        "form.success.text": "Thank you for reaching out. We'll be in touch soon.",
-        "footer.tag": "Strategic Clarity. Global Reach.",
+
+        "footer.tag": "The right perspective. The right people.",
         "footer.linkedin": "LinkedIn",
         "footer.copy": "© 2026 VEX & Co. All rights reserved.",
         "footer.privacy": "Privacy Policy",
@@ -812,11 +700,13 @@
       },
       es: {
         "nav.contact": "Contacto",
-        "hero.kicker": "Consultoría boutique",
-        "hero.h1": "Consultoría de Alto Impacto.<br/>Ejecución Boutique.",
+
+        "hero.kicker": "Consultoría cross-border",
+        "hero.h1": "Desafíos de Alto Impacto.<br/>Ejecución Directa.",
         "hero.p": "Conectamos la estrategia con el impacto real a través de una red multilateral de socios estratégicos.",
         "hero.meta1": "Sin rodeos. Solo ejecución.",
         "hero.meta2": "Europa primero. Listos para global.",
+
         "approach.kicker": "Nuestro enfoque",
         "approach.h2": "Principios que guían cada colaboración.",
         "p1.h": "Criterio Multilateral",
@@ -827,33 +717,29 @@
         "p3.p": "Orquestamos las capacidades y socios adecuados para cada proyecto.",
         "p4.h": "Compromiso con la Ejecución",
         "p4.p": "La estrategia sin impacto real no vale nada. Nos responsabilizamos de los resultados.",
+
         "caps.kicker": "Capacidades",
         "caps.h2": "Tres formas en las que ayudamos a avanzar.",
-        "c1.h": "Asesoría Estratégica y Entrada a Mercados",
+        "c1.h": "Entrada a Mercados y Estrategia de Crecimiento",
         "c1.p": "Diseñamos la hoja de ruta para la expansión internacional y la optimización de modelos de negocio, asegurando una base sólida para el crecimiento.",
-        "c2.h": "Excelencia Operativa y Articulación",
+        "c2.h": "Operaciones y Orquestación de Partners",
         "c2.p": "Orquestamos equipos y recursos especializados para agilizar procesos, mejorar la eficiencia y cerrar la brecha entre el plan y la acción.",
         "c3.h": "Gestión de Proyectos Multilaterales",
         "c3.p": "Supervisión integral de proyectos complejos en diferentes mercados, manteniendo la alineación estratégica y entregando resultados tangibles.",
+
         "net.kicker": "La red",
         "net.h2": "No hacemos todo. Hacemos lo que importa.",
-        "net.lead": "Una red curada de socios de confianza—armada según el reto.",
-        "net.p": "Nuestra fortaleza radica en la capacidad de articular los socios y especialistas adecuados para cada reto. Mantenemos una red curada de colaboradores de confianza en diferentes mercados, sectores y disciplinas.",
+        "net.lead": "Una red de especialistas de confianza—armada según el reto.",
+        "net.p": "Nuestra fortaleza radica en la capacidad de articular los socios y especialistas adecuados para cada reto. Mantenemos una red de colaboradores de confianza en diferentes mercados, sectores y disciplinas.",
         "net.b1": "Accedes a expertise de clase mundial sin la sobrecarga de una gran firma.",
         "net.b2": "Cada proyecto se equipa con las capacidades exactas necesarias—sin relleno, sin compromisos.",
         "net.b3": "Nos movemos rápido porque sabemos a quién llamar y cómo trabajar juntos sin fricciones.",
-        "net.note": "El diagrama es ilustrativo. Los socios se seleccionan según contexto, mercado y alcance.",
+        "net.note": "Con base en Madrid. Red en Europa, Américas y más allá.",
+
         "contact.h2": "Hablemos",
         "contact.p": "¿Listo para explorar cómo podemos ayudarte?",
-        "form.name": "Nombre",
-        "form.email": "Correo electrónico",
-        "form.company": "Empresa",
-        "form.message": "Mensaje",
-        "form.submit": "Enviar Mensaje",
-        "form.note": "Normalmente respondemos en 24-48 horas.",
-        "form.success.title": "Mensaje Enviado",
-        "form.success.text": "Gracias por contactarnos. Te responderemos pronto.",
-        "footer.tag": "Claridad Estratégica. Alcance Global.",
+
+        "footer.tag": "La perspectiva correcta. Las personas correctas.",
         "footer.linkedin": "LinkedIn",
         "footer.copy": "© 2026 VEX & Co. Todos los derechos reservados.",
         "footer.privacy": "Política de Privacidad",
@@ -861,16 +747,10 @@
       }
     };
 
-    const placeholders = {
-      en: { name: "Your name", email: "your@email.com", company: "Your company (optional)", message: "Tell us about your project or challenge..." },
-      es: { name: "Tu nombre", email: "tu@correo.com", company: "Tu empresa (opcional)", message: "Cuéntanos sobre tu proyecto o reto..." }
-    };
-
     const els = () => Array.from(document.querySelectorAll('[data-i18n]'));
 
     function setLang(lang) {
       const d = dict[lang];
-      const p = placeholders[lang];
       if (!d) return;
 
       els().forEach(el => {
@@ -879,15 +759,9 @@
         if (typeof val === 'string') el.innerHTML = val;
       });
 
-      if (p) {
-        document.getElementById('name').placeholder = p.name;
-        document.getElementById('email').placeholder = p.email;
-        document.getElementById('company').placeholder = p.company;
-        document.getElementById('message').placeholder = p.message;
-      }
-
       document.documentElement.lang = lang;
       localStorage.setItem('vex_lang', lang);
+
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
       document.getElementById('btn-es').classList.toggle('active', lang === 'es');
     }
@@ -895,38 +769,7 @@
     document.getElementById('btn-en').addEventListener('click', () => setLang('en'));
     document.getElementById('btn-es').addEventListener('click', () => setLang('es'));
 
-    const form = document.getElementById('contact-form');
-    const formContainer = document.getElementById('contact-form-container');
-    const successMessage = document.getElementById('form-success');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const submitBtn = form.querySelector('.btn-submit');
-      const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = '...';
-      submitBtn.disabled = true;
-
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-          formContainer.style.display = 'none';
-          successMessage.style.display = 'block';
-          form.reset();
-        } else {
-          throw new Error('Form submission failed');
-        }
-      } catch (error) {
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-        alert('Something went wrong. Please try again or email us directly at hello@vexandco.com');
-      }
-    });
-
+    // Init
     const saved = localStorage.getItem('vex_lang');
     setLang(saved || 'en');
   </script>
