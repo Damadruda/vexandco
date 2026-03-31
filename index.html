@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VEX & Co — Strategic Consulting</title>
-  <meta name="description" content="VEX & Co — Cross-border consulting. The right perspective. The right people." />
+  <title>VEX & Co — Cross-border B2B Consulting</title>
+  <meta name="description" content="Cross-border consulting for B2B companies expanding between Europe and Latin America. Strategy, fractional leadership, and partner orchestration. No fluff. Just results." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,6 +45,7 @@
     }
 
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     html, body { height: 100%; }
     body {
       margin: 0;
@@ -57,6 +58,8 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
+
+    ::selection { background-color: #2D2D2D; color: #fff; }
 
     a { color: inherit; text-decoration: none; }
     a.underline { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
@@ -97,8 +100,30 @@
       font-size: var(--small);
       color: var(--muted);
     }
+    .nav__links {
+      display: none;
+    }
+    @media (min-width: 700px) {
+      .nav__links {
+        display: inline-flex;
+        gap: 24px;
+        margin-right: 12px;
+      }
+    }
     .nav__right a { color: var(--muted); }
     .nav__right a:hover { color: var(--ink); }
+    .nav__cta {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 18px;
+      background: var(--ink);
+      color: var(--paper) !important;
+      border-radius: 999px;
+      font-size: var(--small);
+      font-weight: 500;
+      transition: background .2s;
+    }
+    .nav__cta:hover { background: #444; }
 
     .lang {
       display: inline-flex;
@@ -164,6 +189,10 @@
       margin: 0;
       max-width: 16ch;
     }
+    .hero__h1 em {
+      font-style: italic;
+      color: var(--muted);
+    }
     .hero__p {
       margin: var(--space-3) 0 0;
       color: var(--muted);
@@ -178,6 +207,7 @@
       align-items: center;
       color: var(--muted);
       font-size: var(--small);
+      flex-wrap: wrap;
     }
     .pill {
       display: inline-flex;
@@ -187,6 +217,37 @@
       border-radius: 999px;
       background: color-mix(in srgb, var(--paper) 88%, white);
     }
+    .hero__cta {
+      margin-top: var(--space-4);
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: 999px;
+      font-weight: 500;
+      transition: background .2s;
+    }
+    .btn-primary:hover { background: #444; }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-weight: 500;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-secondary:hover { border-color: var(--ink); color: var(--ink); }
+
     .hero__right {
       position: relative;
       min-height: 320px;
@@ -202,6 +263,171 @@
       height: 1px;
       background: var(--line-soft);
       margin-top: var(--space-6);
+    }
+
+    /* CAPABILITIES */
+    .capabilities {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      border-top: 1px solid var(--line-soft);
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .cap {
+      padding: 34px 0;
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 18px;
+    }
+    .cap + .cap { border-top: 1px solid var(--line-soft); }
+    .cap .tag {
+      font-size: var(--small);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-top: 6px;
+    }
+    .cap h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(22px, 2.1vw, 32px);
+      margin: 0;
+      line-height: 1.15;
+    }
+    .cap__hook {
+      margin: 10px 0 0;
+      font-style: italic;
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.5;
+    }
+    .cap p:not(.cap__hook) {
+      margin: 14px 0 0;
+      color: var(--muted);
+      max-width: 78ch;
+    }
+    .section-cta {
+      margin-top: var(--space-4);
+      padding-top: var(--space-3);
+      border-top: 1px solid var(--line-soft);
+    }
+    .section-cta a {
+      color: var(--muted);
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .section-cta a:hover { color: var(--ink); }
+
+    /* FOUNDER + NETWORK */
+    .founder__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .founder__avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--paper);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: var(--space-3);
+    }
+    .founder__name {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: var(--h3);
+      margin: 0 0 4px;
+    }
+    .founder__role {
+      color: var(--muted);
+      font-size: var(--small);
+      margin: 0 0 var(--space-3);
+    }
+    .founder__bio p {
+      color: var(--muted);
+      margin: 0 0 var(--space-2);
+    }
+    .geo-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: var(--space-3);
+    }
+    .geo-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: var(--small);
+      color: var(--muted);
+      background: #fff;
+    }
+
+    /* PARTNERS */
+    .partners {
+      margin-top: var(--space-5);
+      padding-top: var(--space-5);
+      border-top: 1px solid var(--line-soft);
+    }
+    .partners__label {
+      font-size: var(--small);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 var(--space-3);
+    }
+    .partners__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .partner {
+      padding: 20px 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      transition: border-color .2s;
+    }
+    .partner:hover {
+      border-color: rgba(26,26,26,.28);
+    }
+    .partner__name {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 17px;
+      margin: 0 0 2px;
+      line-height: 1.3;
+    }
+    .partner__name a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .partner__name a:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    .partner__spec {
+      font-size: var(--small);
+      color: var(--muted);
+      margin: 0 0 6px;
+      line-height: 1.5;
+    }
+    .partner__geo {
+      font-size: 12px;
+      color: var(--muted);
+      opacity: .65;
+    }
+    @media (max-width: 900px) {
+      .partners__grid { grid-template-columns: 1fr; }
     }
 
     /* APPROACH (4 principles) */
@@ -236,39 +462,39 @@
       color: var(--muted);
     }
 
-    /* CAPABILITIES */
-    .capabilities {
+    /* PROOF (stats + quote) */
+    .proof__stats {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 0;
-      border-top: 1px solid var(--line-soft);
-      border-bottom: 1px solid var(--line-soft);
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-bottom: var(--space-5);
     }
-    .cap {
-      padding: 34px 0;
-      display: grid;
-      grid-template-columns: 72px 1fr;
-      gap: 18px;
-    }
-    .cap + .cap { border-top: 1px solid var(--line-soft); }
-    .cap .tag {
-      font-size: var(--small);
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      padding-top: 6px;
-    }
-    .cap h3 {
+    .stat__value {
       font-family: var(--serif);
       font-weight: 500;
-      font-size: clamp(22px, 2.1vw, 32px);
-      margin: 0;
-      line-height: 1.15;
+      font-size: clamp(28px, 2.8vw, 40px);
+      line-height: 1.1;
+      margin: 0 0 8px;
     }
-    .cap p {
-      margin: 14px 0 0;
+    .stat__label {
+      font-size: var(--small);
       color: var(--muted);
-      max-width: 78ch;
+    }
+    .proof__card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 32px;
+      max-width: 680px;
+      background: #fff;
+    }
+    .proof__card p {
+      color: var(--muted);
+      margin: 0 0 var(--space-2);
+    }
+    .proof__card .ref {
+      font-size: var(--small);
+      font-weight: 500;
+      color: var(--ink);
     }
 
     /* NETWORK (dark panel) */
@@ -326,37 +552,51 @@
 
     /* CONTACT */
     .contact {
-      text-align: center;
       padding: var(--space-6) 0;
+      background: var(--panel);
+      color: var(--panel-ink);
+    }
+    .contact__inner {
+      max-width: 640px;
     }
     .contact .title {
       font-family: var(--serif);
       font-weight: 500;
       font-size: var(--h2);
-      line-height: var(--lh-tight);
-      margin: 0 0 var(--space-2);
+      line-height: 1.15;
+      margin: 0 0 var(--space-3);
+      color: #fff;
+    }
+    .contact .title span {
+      color: rgba(231,231,231,.45);
     }
     .contact .sub {
       margin: 0 0 var(--space-4);
-      color: var(--muted);
+      color: rgba(231,231,231,.65);
       font-size: 18px;
+      line-height: 1.65;
     }
-    .email {
-      display: inline-block;
-      font-size: clamp(18px, 2.2vw, 28px);
-      letter-spacing: .01em;
+    .contact .email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      background: #fff;
       color: var(--ink);
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 6px;
+      border-radius: 999px;
+      font-size: 18px;
+      font-weight: 500;
+      transition: background .2s;
     }
-    .email:hover { opacity: .82; }
+    .contact .email-btn:hover { background: #f0f0f0; }
 
+    /* FOOTER */
     footer {
       padding: 44px 0 34px;
-      border-top: 1px solid var(--line-soft);
-      color: var(--muted);
+      border-top: 1px solid rgba(231,231,231,.08);
+      color: rgba(231,231,231,.4);
       font-size: var(--small);
+      background: var(--panel);
     }
     .footer__grid {
       display: grid;
@@ -368,15 +608,15 @@
       display: grid;
       gap: 10px;
     }
-    .footer__brand .logo { font-size: 18px; color: var(--ink); }
+    .footer__brand .logo { font-size: 18px; color: #fff; }
     .footer__links {
       display: inline-flex;
       gap: 16px;
       justify-content: flex-end;
       flex-wrap: wrap;
     }
-    .footer__links a { color: var(--muted); }
-    .footer__links a:hover { color: var(--ink); }
+    .footer__links a { color: rgba(231,231,231,.4); }
+    .footer__links a:hover { color: #fff; }
 
     .footer__bottom {
       margin-top: 22px;
@@ -384,19 +624,21 @@
       justify-content: space-between;
       gap: 16px;
       flex-wrap: wrap;
-      border-top: 1px solid var(--line-soft);
+      border-top: 1px solid rgba(231,231,231,.08);
       padding-top: 18px;
     }
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .hero__grid { grid-template-columns: 1fr; }
-      .hero__right { min-height: 220px; }
+      .hero__right { display: none; }
       .principles { grid-template-columns: 1fr; }
       .network__grid { grid-template-columns: 1fr; }
+      .founder__grid { grid-template-columns: 1fr; }
       .cap { grid-template-columns: 54px 1fr; }
       .footer__grid { grid-template-columns: 1fr; }
       .footer__links { justify-content: flex-start; }
+      .proof__stats { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -407,7 +649,12 @@
     <div class="wrap nav__inner">
       <a class="logo" href="#top" aria-label="VEX & Co">VEX & Co</a>
       <div class="nav__right">
-        <a href="#contact" class="underline" data-i18n="nav.contact">Contact</a>
+        <div class="nav__links">
+          <a href="#capabilities" data-i18n="nav.services">Services</a>
+          <a href="#founder" data-i18n="nav.about">About</a>
+          <a href="#approach" data-i18n="nav.approach">Approach</a>
+        </div>
+        <a href="#contact" class="nav__cta" data-i18n="nav.cta">Get in touch</a>
         <div class="lang" aria-label="Language selector">
           <button id="btn-es" type="button">ES</button>
           <span style="opacity:.55">|</span>
@@ -421,32 +668,28 @@
   <main id="top" class="hero" role="main">
     <div class="wrap hero__grid">
       <div>
-        <p class="kicker" data-i18n="hero.kicker">Cross-border consulting</p>
-        <h1 class="hero__h1" data-i18n="hero.h1">High-Stakes Challenges.<br/>Hands-On Execution.</h1>
-        <p class="hero__p" data-i18n="hero.p">We bridge the gap between strategy and real-world impact through a multilateral network of partners.</p>
+        <p class="kicker" data-i18n="hero.kicker">Cross-border B2B consulting</p>
+        <h1 class="hero__h1" data-i18n="hero.h1">No fluff.<br/>No decks.<br/><em>Just results.</em></h1>
+        <p class="hero__p" data-i18n="hero.p">We operate at the vertex where strategy meets execution — helping B2B companies grow across Europe and Latin America without the overhead of a large firm.</p>
 
-        <div class="hero__meta" aria-label="Meta">
-          <span class="pill" data-i18n="hero.meta1">No fluff. Just execution.</span>
-          <span class="pill" data-i18n="hero.meta2">Europe-first. Global-ready.</span>
+        <div class="hero__cta">
+          <a href="#contact" class="btn-primary" data-i18n="hero.cta1">Start a conversation →</a>
+          <a href="#capabilities" class="btn-secondary" data-i18n="hero.cta2">See how we work</a>
         </div>
 
         <div class="divider" aria-hidden="true"></div>
       </div>
 
       <div class="hero__right" aria-hidden="true">
-        <!-- Subtle abstract line art (inline SVG) -->
         <svg class="hero__art" viewBox="0 0 900 700" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g stroke="rgba(26,26,26,0.16)" stroke-width="1.1">
             <path d="M70 520 C180 440, 250 520, 340 450 C430 380, 500 430, 610 360 C720 290, 780 320, 860 250"/>
             <path d="M90 590 C210 500, 270 590, 360 520 C450 450, 540 470, 650 410 C760 350, 820 380, 890 320"/>
             <path d="M110 650 C240 560, 300 650, 390 580 C480 510, 580 520, 690 470 C800 420, 860 450, 920 400"/>
-
             <path d="M560 40 C520 120, 600 180, 520 260 C440 340, 520 390, 460 480 C400 570, 470 610, 440 690"/>
             <path d="M640 30 C600 120, 690 170, 610 270 C530 370, 610 410, 550 510 C490 610, 560 650, 530 720"/>
-
             <path d="M160 120 C260 80, 320 160, 420 120 C520 80, 580 140, 680 100 C780 60, 840 100, 900 70"/>
           </g>
-
           <g fill="rgba(26,26,26,0.22)">
             <circle cx="610" cy="360" r="3"/>
             <circle cx="520" cy="260" r="3"/>
@@ -460,158 +703,185 @@
     </div>
   </main>
 
-  <!-- APPROACH (4 Principles) -->
-  <section id="approach">
-    <div class="wrap">
-      <p class="kicker" data-i18n="approach.kicker">Our approach</p>
-      <h2 class="section-title" data-i18n="approach.h2">Principles that guide every engagement.</h2>
-
-      <div class="principles">
-        <article class="principle">
-          <div class="num">01</div>
-          <div>
-            <h3 data-i18n="p1.h">Multilateral Criterion</h3>
-            <p data-i18n="p1.p">Cross-market learning and international perspective inform every decision.</p>
-          </div>
-        </article>
-
-        <article class="principle">
-          <div class="num">02</div>
-          <div>
-            <h3 data-i18n="p2.h">Strategic Clarity</h3>
-            <p data-i18n="p2.p">Synthesis over complexity. We distill complex challenges into actionable insight.</p>
-          </div>
-        </article>
-
-        <article class="principle">
-          <div class="num">03</div>
-          <div>
-            <h3 data-i18n="p3.h">Expert Articulation</h3>
-            <p data-i18n="p3.p">We orchestrate the right capabilities and partners for each project.</p>
-          </div>
-        </article>
-
-        <article class="principle">
-          <div class="num">04</div>
-          <div>
-            <h3 data-i18n="p4.h">Commitment to Execution</h3>
-            <p data-i18n="p4.p">Strategy means nothing without real-world impact. We own the results.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <!-- CAPABILITIES -->
   <section id="capabilities">
     <div class="wrap">
       <p class="kicker" data-i18n="caps.kicker">Capabilities</p>
-      <h2 class="section-title" data-i18n="caps.h2">Three ways we help clients move forward.</h2>
+      <h2 class="section-title" data-i18n="caps.h2">Three ways we move the needle.</h2>
 
       <div class="capabilities" role="list">
         <div class="cap" role="listitem">
           <div class="tag">[01]</div>
           <div>
-            <h3 data-i18n="c1.h">Market Entry &amp; Growth Strategy</h3>
-            <p data-i18n="c1.p">We design the roadmap for international expansion and business model optimization, ensuring a solid foundation for growth.</p>
+            <h3 data-i18n="c1.h">Cross-border growth</h3>
+            <p class="cap__hook" data-i18n="c1.hook">You've proven your model locally. Now you need it to work in markets you don't fully understand yet.</p>
+            <p data-i18n="c1.p">We design and execute go-to-market strategies for B2B companies expanding between Europe and Latin America. From market selection and positioning to channel activation and first pipeline — we don't hand you a playbook. We run it with you.</p>
           </div>
         </div>
 
         <div class="cap" role="listitem">
           <div class="tag">[02]</div>
           <div>
-            <h3 data-i18n="c2.h">Operations &amp; Partner Orchestration</h3>
-            <p data-i18n="c2.p">We orchestrate specialized teams and resources to streamline processes, improve efficiency, and bridge the gap between plan and action.</p>
+            <h3 data-i18n="c2.h">Fractional leadership</h3>
+            <p class="cap__hook" data-i18n="c2.hook">Your team has the energy. What's missing is the direction.</p>
+            <p data-i18n="c2.p">We step in as fractional CMO, CRO, or strategic advisor — providing senior-level leadership without the commitment of a full-time executive. 20+ years in B2B enterprise software (SAP, Oracle, SaaS) behind every decision.</p>
           </div>
         </div>
 
         <div class="cap" role="listitem">
           <div class="tag">[03]</div>
           <div>
-            <h3 data-i18n="c3.h">Multilateral Project Management</h3>
-            <p data-i18n="c3.p">End-to-end oversight of complex projects across different markets, maintaining strategic alignment and delivering tangible results.</p>
+            <h3 data-i18n="c3.h">Partner orchestration</h3>
+            <p class="cap__hook" data-i18n="c3.hook">You don't need five consultants. You need one call.</p>
+            <p data-i18n="c3.p">Complex projects need more than strategy — they need the right people, coordinated. We assemble and lead specialized teams across markets and disciplines, so you get integrated execution instead of fragmented advice.</p>
           </div>
+        </div>
+      </div>
+
+      <div class="section-cta">
+        <a href="#contact" data-i18n="caps.cta">These sound like your challenges? Let's talk →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER + NETWORK -->
+  <section id="founder">
+    <div class="wrap">
+      <p class="kicker" data-i18n="founder.kicker">Who we are</p>
+      <h2 class="section-title" data-i18n="founder.h2">Built on experience. Scaled through partnerships.</h2>
+
+      <div class="founder__grid">
+        <div>
+          <div class="founder__avatar">DA</div>
+          <h3 class="founder__name">Diego Amadruda</h3>
+          <p class="founder__role" data-i18n="founder.role">Founder & CEO</p>
+          <div class="founder__bio">
+            <p data-i18n="founder.bio1">Two decades in B2B enterprise software. SAP and Oracle ecosystems. Marketing, market development, and commercial strategy across Latin America and Europe.</p>
+            <p data-i18n="founder.bio2">Vex&Co was founded on a simple premise: companies growing internationally deserve senior guidance without the overhead — or the attitude — of a large firm.</p>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="section-title" style="font-size: clamp(22px, 2.1vw, 30px);" data-i18n="founder.net_h">We don't do everything.<br/>We do what matters.</h3>
+          <p style="color: var(--muted);" data-i18n="founder.net_p">Behind every engagement is a curated network of specialists — assembled per challenge, not per headcount. You get the exact capabilities your project needs, without paying for the ones it doesn't.</p>
+          <div class="geo-tags">
+            <span class="geo-tag">Madrid (HQ)</span>
+            <span class="geo-tag">Santiago</span>
+            <span class="geo-tag">São Paulo</span>
+            <span class="geo-tag">Bogotá</span>
+            <span class="geo-tag">London</span>
+            <span class="geo-tag">Nordics</span>
+            <span class="geo-tag">DACH</span>
+          </div>
+          <p style="font-size: var(--small); color: var(--muted); margin-top: 16px; opacity: .7;" data-i18n="founder.net_note">Network spans Europe and the Americas.</p>
+        </div>
+      </div>
+
+      <!-- Partners -->
+      <div class="partners">
+        <p class="partners__label" data-i18n="partners.label">Strategic partners</p>
+        <div class="partners__grid">
+
+          <div class="partner">
+            <p class="partner__name"><a href="https://www.linkedin.com/in/fedeperezjacomet/" target="_blank" rel="noopener">Fede Perez Jacomet</a></p>
+            <p class="partner__spec" data-i18n="partner.fede">Digital marketing & creative strategy. Experience with global brands (Virgin, PayPal, Ford, Heineken).</p>
+            <p class="partner__geo">Madrid · LATAM · Europe</p>
+          </div>
+
+          <div class="partner">
+            <p class="partner__name"><a href="https://www.qubikcommerce.com" target="_blank" rel="noopener">Qubik Commerce</a></p>
+            <p class="partner__spec" data-i18n="partner.qubik">eCommerce & SAP Commerce specialists. Composable commerce implementation and consulting.</p>
+            <p class="partner__geo">LATAM</p>
+          </div>
+
+          <div class="partner">
+            <p class="partner__name"><a href="https://www.linkedin.com/in/miannino/" target="_blank" rel="noopener">Marcelo Iannino</a></p>
+            <p class="partner__spec" data-i18n="partner.marcelo">Supply chain management. Deep expertise in operations and logistics across LATAM and European markets.</p>
+            <p class="partner__geo">Madrid · LATAM · Europe</p>
+          </div>
+
+          <div class="partner">
+            <p class="partner__name"><a href="https://www.linkedin.com/in/hern%C3%A1n-untermann-76b96820/" target="_blank" rel="noopener">Hernán Untermann</a></p>
+            <p class="partner__spec" data-i18n="partner.hernan">Operations & IT services. Extensive track record in operational management across LATAM and Europe.</p>
+            <p class="partner__geo">Madrid · LATAM · Europe</p>
+          </div>
+
         </div>
       </div>
     </div>
   </section>
 
-  <!-- THE NETWORK -->
-  <section class="network" id="network">
+  <!-- APPROACH (4 Principles) -->
+  <section id="approach" style="background: #fff;">
     <div class="wrap">
-      <p class="kicker" data-i18n="net.kicker">The network</p>
-      <div class="network__grid">
+      <p class="kicker" data-i18n="approach.kicker">Our approach</p>
+      <h2 class="section-title" data-i18n="approach.h2">How we work.</h2>
+
+      <div class="principles">
+        <article class="principle">
+          <div class="num">01</div>
+          <div>
+            <h3 data-i18n="p1.h">Senior from day one</h3>
+            <p data-i18n="p1.p">No junior associates learning on your project. The person in the strategy meeting is the person doing the work.</p>
+          </div>
+        </article>
+
+        <article class="principle">
+          <div class="num">02</div>
+          <div>
+            <h3 data-i18n="p2.h">Both sides of the Atlantic</h3>
+            <p data-i18n="p2.p">We've sold in Latin America and in Europe. Not studied them — operated in them. Every recommendation comes from market experience, not desk research.</p>
+          </div>
+        </article>
+
+        <article class="principle">
+          <div class="num">03</div>
+          <div>
+            <h3 data-i18n="p3.h">Strategy that ships</h3>
+            <p data-i18n="p3.p">We don't deliver a deck and walk away. Our work is measured by what happens after the recommendation — pipeline built, markets entered, revenue generated.</p>
+          </div>
+        </article>
+
+        <article class="principle">
+          <div class="num">04</div>
+          <div>
+            <h3 data-i18n="p4.h">Right-sized, not undersized</h3>
+            <p data-i18n="p4.p">Lean structure doesn't mean limited reach. It means no dead weight. We scale through our network — adding the right capabilities for each project without adding layers.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="section-cta">
+        <a href="#contact" data-i18n="approach.cta">Sound like a fit? Tell us what you're working on →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section id="proof">
+    <div class="wrap">
+      <div class="proof__stats">
         <div>
-          <h2 class="section-title" data-i18n="net.h2">We don't do everything. We do what matters.</h2>
-          <p class="lead" data-i18n="net.lead">A trusted network of specialists—assembled per challenge.</p>
-          <p data-i18n="net.p">Our strength lies in our ability to bring together the right partners and specialists for each challenge. We maintain a trusted network of collaborators across markets, sectors, and disciplines.</p>
-
-          <ul class="bullets" aria-label="Benefits">
-            <li><span class="dot" aria-hidden="true"></span><span data-i18n="net.b1">You get access to world-class expertise without the overhead of a large firm.</span></li>
-            <li><span class="dot" aria-hidden="true"></span><span data-i18n="net.b2">Every project is staffed with the exact capabilities needed—no padding, no compromise.</span></li>
-            <li><span class="dot" aria-hidden="true"></span><span data-i18n="net.b3">We move fast because we know who to call and how to work together seamlessly.</span></li>
-          </ul>
+          <p class="stat__value">20+</p>
+          <p class="stat__label" data-i18n="proof.s1">Years in B2B enterprise</p>
         </div>
+        <div>
+          <p class="stat__value">2</p>
+          <p class="stat__label" data-i18n="proof.s2">Continents, one network</p>
+        </div>
+        <div>
+          <p class="stat__value">SAP & Oracle</p>
+          <p class="stat__label" data-i18n="proof.s3">Ecosystem expertise</p>
+        </div>
+        <div>
+          <p class="stat__value" data-i18n="proof.s4v">Fractional</p>
+          <p class="stat__label" data-i18n="proof.s4">CMO / CRO / Advisory</p>
+        </div>
+      </div>
 
-        <aside class="network__art" aria-label="Network map">
-          <!-- Map showing Madrid connected to key regions -->
-          <svg viewBox="0 0 520 420" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Network map from Madrid">
-            <defs>
-              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="rgba(231,231,231,.55)" />
-                <stop offset="1" stop-color="rgba(231,231,231,.12)" />
-              </linearGradient>
-            </defs>
-            
-            <!-- Connection lines from Madrid (center) to regions -->
-            <g stroke="url(#g)" stroke-width="1.5" fill="none">
-              <!-- Madrid to LATAM (left) -->
-              <path d="M260 210 Q 120 280, 60 320" />
-              <!-- Madrid to Northern Europe -->
-              <path d="M260 210 Q 300 120, 380 80" />
-              <!-- Madrid to Central Europe -->
-              <path d="M260 210 Q 360 180, 450 160" />
-              <!-- Madrid to UK -->
-              <path d="M260 210 Q 200 140, 180 90" />
-              <!-- Madrid to Mediterranean -->
-              <path d="M260 210 Q 340 260, 420 300" />
-              <!-- Madrid to Americas -->
-              <path d="M260 210 Q 140 200, 70 150" />
-            </g>
-            
-            <!-- Region nodes with labels -->
-            <g fill="rgba(231,231,231,.85)">
-              <!-- Madrid (center, larger) -->
-              <circle cx="260" cy="210" r="8" />
-              <!-- LATAM -->
-              <circle cx="60" cy="320" r="5" />
-              <!-- Northern Europe -->
-              <circle cx="380" cy="80" r="5" />
-              <!-- Central Europe -->
-              <circle cx="450" cy="160" r="5" />
-              <!-- UK -->
-              <circle cx="180" cy="90" r="5" />
-              <!-- Mediterranean -->
-              <circle cx="420" cy="300" r="5" />
-              <!-- Americas -->
-              <circle cx="70" cy="150" r="5" />
-            </g>
-            
-            <!-- Labels -->
-            <g fill="rgba(231,231,231,.6)" font-family="Inter, sans-serif" font-size="11">
-              <text x="260" y="240" text-anchor="middle">Madrid</text>
-              <text x="60" y="345" text-anchor="middle">LATAM</text>
-              <text x="380" y="65" text-anchor="middle">Nordics</text>
-              <text x="450" y="145" text-anchor="middle">DACH</text>
-              <text x="180" y="75" text-anchor="middle">UK</text>
-              <text x="420" y="325" text-anchor="middle">Med</text>
-              <text x="70" y="135" text-anchor="middle">US</text>
-            </g>
-          </svg>
-          <p style="margin:16px 0 0; font-size:13px; color: rgba(231,231,231,.75);" data-i18n="net.note">
-            Based in Madrid. Network spans Europe, Americas, and beyond.
-          </p>
-        </aside>
+      <div class="proof__card">
+        <p data-i18n="proof.text">We've helped B2B companies enter new markets, build pipeline, and close their first international deals. We work with SaaS companies, software consultancies, and service firms navigating growth between Europe and Latin America.</p>
+        <p class="ref" data-i18n="proof.ref">References available on request.</p>
       </div>
     </div>
   </section>
@@ -619,9 +889,14 @@
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="wrap">
-      <h2 class="title" data-i18n="contact.h2">Let's Talk</h2>
-      <p class="sub" data-i18n="contact.p">Ready to explore how we can help?</p>
-      <a class="email" href="mailto:hello@vexandco.com">hello@vexandco.com</a>
+      <div class="contact__inner">
+        <h2 class="title" data-i18n="contact.h2">Tell us the problem. <span>We'll tell you if we can solve it — and if we can't, we'll tell you that too.</span></h2>
+        <p class="sub" data-i18n="contact.p">30 minutes. No pitch. Just clarity. Write to Diego directly — if there's a fit, we'll outline next steps. If not, you'll leave with useful perspective either way.</p>
+        <a class="email-btn" href="mailto:hello@vexandco.com">
+          hello@vexandco.com
+          <span>→</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -630,7 +905,7 @@
     <div class="wrap">
       <div class="footer__grid">
         <div class="footer__brand">
-          <div class="logo">VEX &amp; Co</div>
+          <div class="logo">VEX & Co</div>
           <div data-i18n="footer.tag">The right perspective. The right people.</div>
         </div>
         <nav class="footer__links" aria-label="Social">
@@ -639,7 +914,7 @@
       </div>
 
       <div class="footer__bottom">
-        <div data-i18n="footer.copy">© 2026 VEX &amp; Co. All rights reserved.</div>
+        <div data-i18n="footer.copy">© 2026 VEX & Co. All rights reserved.</div>
         <div class="footer__links" aria-label="Legal">
           <a href="#" class="underline" data-i18n="footer.privacy">Privacy Policy</a>
           <a href="#" class="underline" data-i18n="footer.terms">Terms of Use</a>
@@ -649,48 +924,69 @@
   </footer>
 
   <script>
-    // i18n dictionary - Updated content
     const dict = {
       en: {
-        "nav.contact": "Contact",
+        "nav.services": "Services",
+        "nav.about": "About",
+        "nav.approach": "Approach",
+        "nav.cta": "Get in touch",
 
-        "hero.kicker": "Cross-border consulting",
-        "hero.h1": "High-Stakes Challenges.<br/>Hands-On Execution.",
-        "hero.p": "We bridge the gap between strategy and real-world impact through a multilateral network of partners.",
-        "hero.meta1": "No fluff. Just execution.",
-        "hero.meta2": "Europe-first. Global-ready.",
-
-        "approach.kicker": "Our approach",
-        "approach.h2": "Principles that guide every engagement.",
-        "p1.h": "Multilateral Criterion",
-        "p1.p": "Cross-market learning and international perspective inform every decision.",
-        "p2.h": "Strategic Clarity",
-        "p2.p": "Synthesis over complexity. We distill complex challenges into actionable insight.",
-        "p3.h": "Expert Articulation",
-        "p3.p": "We orchestrate the right capabilities and partners for each project.",
-        "p4.h": "Commitment to Execution",
-        "p4.p": "Strategy means nothing without real-world impact. We own the results.",
+        "hero.kicker": "Cross-border B2B consulting",
+        "hero.h1": "No fluff.<br/>No decks.<br/><em>Just results.</em>",
+        "hero.p": "We operate at the vertex where strategy meets execution — helping B2B companies grow across Europe and Latin America without the overhead of a large firm.",
+        "hero.cta1": "Start a conversation →",
+        "hero.cta2": "See how we work",
 
         "caps.kicker": "Capabilities",
-        "caps.h2": "Three ways we help clients move forward.",
-        "c1.h": "Market Entry & Growth Strategy",
-        "c1.p": "We design the roadmap for international expansion and business model optimization, ensuring a solid foundation for growth.",
-        "c2.h": "Operations & Partner Orchestration",
-        "c2.p": "We orchestrate specialized teams and resources to streamline processes, improve efficiency, and bridge the gap between plan and action.",
-        "c3.h": "Multilateral Project Management",
-        "c3.p": "End-to-end oversight of complex projects across different markets, maintaining strategic alignment and delivering tangible results.",
+        "caps.h2": "Three ways we move the needle.",
+        "c1.h": "Cross-border growth",
+        "c1.hook": "You've proven your model locally. Now you need it to work in markets you don't fully understand yet.",
+        "c1.p": "We design and execute go-to-market strategies for B2B companies expanding between Europe and Latin America. From market selection and positioning to channel activation and first pipeline — we don't hand you a playbook. We run it with you.",
+        "c2.h": "Fractional leadership",
+        "c2.hook": "Your team has the energy. What's missing is the direction.",
+        "c2.p": "We step in as fractional CMO, CRO, or strategic advisor — providing senior-level leadership without the commitment of a full-time executive. 20+ years in B2B enterprise software (SAP, Oracle, SaaS) behind every decision.",
+        "c3.h": "Partner orchestration",
+        "c3.hook": "You don't need five consultants. You need one call.",
+        "c3.p": "Complex projects need more than strategy — they need the right people, coordinated. We assemble and lead specialized teams across markets and disciplines, so you get integrated execution instead of fragmented advice.",
+        "caps.cta": "These sound like your challenges? Let's talk →",
 
-        "net.kicker": "The network",
-        "net.h2": "We don't do everything. We do what matters.",
-        "net.lead": "A trusted network of specialists—assembled per challenge.",
-        "net.p": "Our strength lies in our ability to bring together the right partners and specialists for each challenge. We maintain a trusted network of collaborators across markets, sectors, and disciplines.",
-        "net.b1": "You get access to world-class expertise without the overhead of a large firm.",
-        "net.b2": "Every project is staffed with the exact capabilities needed—no padding, no compromise.",
-        "net.b3": "We move fast because we know who to call and how to work together seamlessly.",
-        "net.note": "Based in Madrid. Network spans Europe, Americas, and beyond.",
+        "founder.kicker": "Who we are",
+        "founder.h2": "Built on experience. Scaled through partnerships.",
+        "founder.role": "Founder & CEO",
+        "founder.bio1": "Two decades in B2B enterprise software. SAP and Oracle ecosystems. Marketing, market development, and commercial strategy across Latin America and Europe.",
+        "founder.bio2": "Vex&Co was founded on a simple premise: companies growing internationally deserve senior guidance without the overhead — or the attitude — of a large firm.",
+        "founder.net_h": "We don't do everything.<br/>We do what matters.",
+        "founder.net_p": "Behind every engagement is a curated network of specialists — assembled per challenge, not per headcount. You get the exact capabilities your project needs, without paying for the ones it doesn't.",
+        "founder.net_note": "Network spans Europe and the Americas.",
 
-        "contact.h2": "Let's Talk",
-        "contact.p": "Ready to explore how we can help?",
+        "partners.label": "Strategic partners",
+        "partner.fede": "Digital marketing & creative strategy. Experience with global brands (Virgin, PayPal, Ford, Heineken).",
+        "partner.qubik": "eCommerce & SAP Commerce specialists. Composable commerce implementation and consulting.",
+        "partner.marcelo": "Supply chain management. Deep expertise in operations and logistics across LATAM and European markets.",
+        "partner.hernan": "Operations & IT services. Extensive track record in operational management across LATAM and Europe.",
+
+        "approach.kicker": "Our approach",
+        "approach.h2": "How we work.",
+        "p1.h": "Senior from day one",
+        "p1.p": "No junior associates learning on your project. The person in the strategy meeting is the person doing the work.",
+        "p2.h": "Both sides of the Atlantic",
+        "p2.p": "We've sold in Latin America and in Europe. Not studied them — operated in them. Every recommendation comes from market experience, not desk research.",
+        "p3.h": "Strategy that ships",
+        "p3.p": "We don't deliver a deck and walk away. Our work is measured by what happens after the recommendation — pipeline built, markets entered, revenue generated.",
+        "p4.h": "Right-sized, not undersized",
+        "p4.p": "Lean structure doesn't mean limited reach. It means no dead weight. We scale through our network — adding the right capabilities for each project without adding layers.",
+        "approach.cta": "Sound like a fit? Tell us what you're working on →",
+
+        "proof.s1": "Years in B2B enterprise",
+        "proof.s2": "Continents, one network",
+        "proof.s3": "Ecosystem expertise",
+        "proof.s4v": "Fractional",
+        "proof.s4": "CMO / CRO / Advisory",
+        "proof.text": "We've helped B2B companies enter new markets, build pipeline, and close their first international deals. We work with SaaS companies, software consultancies, and service firms navigating growth between Europe and Latin America.",
+        "proof.ref": "References available on request.",
+
+        "contact.h2": "Tell us the problem. <span>We'll tell you if we can solve it — and if we can't, we'll tell you that too.</span>",
+        "contact.p": "30 minutes. No pitch. Just clarity. Write to Diego directly — if there's a fit, we'll outline next steps. If not, you'll leave with useful perspective either way.",
 
         "footer.tag": "The right perspective. The right people.",
         "footer.linkedin": "LinkedIn",
@@ -699,45 +995,67 @@
         "footer.terms": "Terms of Use",
       },
       es: {
-        "nav.contact": "Contacto",
+        "nav.services": "Servicios",
+        "nav.about": "Nosotros",
+        "nav.approach": "Enfoque",
+        "nav.cta": "Contacto",
 
-        "hero.kicker": "Consultoría cross-border",
-        "hero.h1": "Desafíos de Alto Impacto.<br/>Ejecución Directa.",
-        "hero.p": "Conectamos la estrategia con el impacto real a través de una red multilateral de socios estratégicos.",
-        "hero.meta1": "Sin rodeos. Solo ejecución.",
-        "hero.meta2": "Europa primero. Listos para global.",
+        "hero.kicker": "Consultoría B2B cross-border",
+        "hero.h1": "Sin humo.<br/>Sin decks.<br/><em>Solo resultados.</em>",
+        "hero.p": "Operamos en el vértice donde la estrategia se encuentra con la ejecución — ayudando a empresas B2B a crecer entre Europa y América Latina sin la estructura de una gran firma.",
+        "hero.cta1": "Iniciar una conversación →",
+        "hero.cta2": "Cómo trabajamos",
+
+        "caps.kicker": "Servicios",
+        "caps.h2": "Tres formas de mover la aguja.",
+        "c1.h": "Crecimiento cross-border",
+        "c1.hook": "Tu modelo funciona en tu mercado. Ahora necesitas que funcione donde todavía no conoces las reglas.",
+        "c1.p": "Diseñamos y ejecutamos estrategias go-to-market para empresas B2B que se expanden entre Europa y América Latina. Desde la selección de mercado y posicionamiento hasta la activación de canales y primer pipeline — no entregamos un playbook. Lo corremos contigo.",
+        "c2.h": "Liderazgo fractional",
+        "c2.hook": "Tu equipo tiene la energía. Lo que falta es la dirección.",
+        "c2.p": "Entramos como CMO, CRO o advisor estratégico fractional — aportando liderazgo senior sin el compromiso de un ejecutivo a tiempo completo. Más de 20 años en software enterprise B2B (SAP, Oracle, SaaS) detrás de cada decisión.",
+        "c3.h": "Orquestación de partners",
+        "c3.hook": "No necesitas cinco consultores. Necesitas una sola llamada.",
+        "c3.p": "Los proyectos complejos necesitan más que estrategia — necesitan a las personas correctas, coordinadas. Ensamblamos y lideramos equipos especializados en distintos mercados y disciplinas, para que obtengas ejecución integrada en vez de consejos fragmentados.",
+        "caps.cta": "¿Te suenan estos desafíos? Hablemos →",
+
+        "founder.kicker": "Quiénes somos",
+        "founder.h2": "Construido sobre experiencia. Escalado a través de partnerships.",
+        "founder.role": "Fundador y CEO",
+        "founder.bio1": "Dos décadas en software enterprise B2B. Ecosistemas SAP y Oracle. Marketing, desarrollo de mercado y estrategia comercial en América Latina y Europa.",
+        "founder.bio2": "Vex&Co se fundó sobre una premisa simple: las empresas que crecen internacionalmente merecen guía senior sin el overhead — ni la actitud — de una gran firma.",
+        "founder.net_h": "No hacemos todo.<br/>Hacemos lo que importa.",
+        "founder.net_p": "Detrás de cada proyecto hay una red curada de especialistas — ensamblada según el desafío, no según el headcount. Accedes a las capacidades exactas que tu proyecto necesita, sin pagar por las que no.",
+        "founder.net_note": "Red en Europa y las Américas.",
+
+        "partners.label": "Partners estratégicos",
+        "partner.fede": "Marketing digital y estrategia creativa. Experiencia con marcas globales (Virgin, PayPal, Ford, Heineken).",
+        "partner.qubik": "Especialistas en eCommerce y SAP Commerce. Implementación y consultoría en composable commerce.",
+        "partner.marcelo": "Supply chain management. Amplia experiencia en operaciones y logística en mercados de LATAM y Europa.",
+        "partner.hernan": "Operaciones y servicios IT. Extensa trayectoria en gestión operacional en LATAM y Europa.",
 
         "approach.kicker": "Nuestro enfoque",
-        "approach.h2": "Principios que guían cada colaboración.",
-        "p1.h": "Criterio Multilateral",
-        "p1.p": "El aprendizaje entre mercados y la perspectiva internacional informan cada decisión.",
-        "p2.h": "Claridad Estratégica",
-        "p2.p": "Síntesis sobre complejidad. Destilamos retos complejos en insights accionables.",
-        "p3.h": "Articulación Experta",
-        "p3.p": "Orquestamos las capacidades y socios adecuados para cada proyecto.",
-        "p4.h": "Compromiso con la Ejecución",
-        "p4.p": "La estrategia sin impacto real no vale nada. Nos responsabilizamos de los resultados.",
+        "approach.h2": "Cómo trabajamos.",
+        "p1.h": "Senior desde el día uno",
+        "p1.p": "Sin juniors aprendiendo en tu proyecto. La persona en la reunión de estrategia es la persona haciendo el trabajo.",
+        "p2.h": "Los dos lados del Atlántico",
+        "p2.p": "Hemos vendido en América Latina y en Europa. No las hemos estudiado — hemos operado en ellas. Cada recomendación viene de experiencia de mercado, no de desk research.",
+        "p3.h": "Estrategia que se ejecuta",
+        "p3.p": "No entregamos un deck y desaparecemos. Nuestro trabajo se mide por lo que pasa después de la recomendación — pipeline construido, mercados abiertos, revenue generado.",
+        "p4.h": "A la medida, no limitado",
+        "p4.p": "Estructura ágil no significa alcance limitado. Significa cero peso muerto. Escalamos a través de nuestra red — sumando las capacidades correctas para cada proyecto sin añadir capas.",
+        "approach.cta": "¿Encaja con lo que necesitas? Cuéntanos en qué estás trabajando →",
 
-        "caps.kicker": "Capacidades",
-        "caps.h2": "Tres formas en las que ayudamos a avanzar.",
-        "c1.h": "Entrada a Mercados y Estrategia de Crecimiento",
-        "c1.p": "Diseñamos la hoja de ruta para la expansión internacional y la optimización de modelos de negocio, asegurando una base sólida para el crecimiento.",
-        "c2.h": "Operaciones y Orquestación de Partners",
-        "c2.p": "Orquestamos equipos y recursos especializados para agilizar procesos, mejorar la eficiencia y cerrar la brecha entre el plan y la acción.",
-        "c3.h": "Gestión de Proyectos Multilaterales",
-        "c3.p": "Supervisión integral de proyectos complejos en diferentes mercados, manteniendo la alineación estratégica y entregando resultados tangibles.",
+        "proof.s1": "Años en enterprise B2B",
+        "proof.s2": "Continentes, una red",
+        "proof.s3": "Expertise en ecosistema",
+        "proof.s4v": "Fractional",
+        "proof.s4": "CMO / CRO / Advisory",
+        "proof.text": "Hemos ayudado a empresas B2B a entrar en nuevos mercados, construir pipeline y cerrar sus primeros deals internacionales. Trabajamos con empresas SaaS, consultoras de software y firmas de servicios que navegan el crecimiento entre Europa y América Latina.",
+        "proof.ref": "Referencias disponibles bajo solicitud.",
 
-        "net.kicker": "La red",
-        "net.h2": "No hacemos todo. Hacemos lo que importa.",
-        "net.lead": "Una red de especialistas de confianza—armada según el reto.",
-        "net.p": "Nuestra fortaleza radica en la capacidad de articular los socios y especialistas adecuados para cada reto. Mantenemos una red de colaboradores de confianza en diferentes mercados, sectores y disciplinas.",
-        "net.b1": "Accedes a expertise de clase mundial sin la sobrecarga de una gran firma.",
-        "net.b2": "Cada proyecto se equipa con las capacidades exactas necesarias—sin relleno, sin compromisos.",
-        "net.b3": "Nos movemos rápido porque sabemos a quién llamar y cómo trabajar juntos sin fricciones.",
-        "net.note": "Con base en Madrid. Red en Europa, Américas y más allá.",
-
-        "contact.h2": "Hablemos",
-        "contact.p": "¿Listo para explorar cómo podemos ayudarte?",
+        "contact.h2": "Cuéntenos el problema. <span>Le diremos si podemos resolverlo — y si no, también se lo diremos.</span>",
+        "contact.p": "30 minutos. Sin pitch. Solo claridad. Escriba directamente a Diego — si hay fit, delineamos los próximos pasos. Si no, se llevará una perspectiva útil de todas formas.",
 
         "footer.tag": "La perspectiva correcta. Las personas correctas.",
         "footer.linkedin": "LinkedIn",
@@ -769,7 +1087,6 @@
     document.getElementById('btn-en').addEventListener('click', () => setLang('en'));
     document.getElementById('btn-es').addEventListener('click', () => setLang('es'));
 
-    // Init
     const saved = localStorage.getItem('vex_lang');
     setLang(saved || 'en');
   </script>
