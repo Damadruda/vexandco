@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VEX & Co — Cross-border B2B Consulting</title>
-  <meta name="description" content="Cross-border consulting for B2B companies expanding between Europe and Latin America. Strategy, fractional leadership, and partner orchestration. No fluff. Just results." />
+  <title>VEX & Co — Cross-border Consulting</title>
+  <meta name="description" content="Cross-border consulting for companies tackling challenges across markets, industries, and disciplines. Strategy, fractional leadership, and partner orchestration." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +54,8 @@
       line-height: var(--lh);
       color: var(--ink);
       background: var(--paper);
-      text-rendering: geometricPrecision;
+      text-rendering: optimizeLegibility;
+      font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
@@ -158,7 +159,7 @@
       font-size: var(--h2);
       line-height: var(--lh-tight);
       margin: 0 0 var(--space-4);
-      letter-spacing: .01em;
+      letter-spacing: -.01em;
     }
     .kicker {
       font-size: var(--small);
@@ -184,8 +185,8 @@
       font-family: var(--serif);
       font-weight: 500;
       font-size: var(--h1);
-      line-height: var(--lh-tight);
-      letter-spacing: .01em;
+      line-height: 1.05;
+      letter-spacing: -.018em;
       margin: 0;
       max-width: 16ch;
     }
@@ -394,10 +395,11 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: #fff;
-      transition: border-color .2s;
+      transition: border-color .25s cubic-bezier(.2,.7,.3,1), background-color .25s cubic-bezier(.2,.7,.3,1);
     }
     .partner:hover {
       border-color: rgba(26,26,26,.28);
+      background: #fdfcfa;
     }
     .partner__name {
       font-family: var(--serif);
@@ -428,6 +430,55 @@
     }
     @media (max-width: 900px) {
       .partners__grid { grid-template-columns: 1fr; }
+    }
+
+    /* & CO */
+    .founder__lead {
+      color: var(--muted);
+      max-width: 60ch;
+      margin: 0 0 var(--space-5);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+    .andco-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: var(--space-5);
+    }
+    .partner__role {
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 4px 0 10px;
+      opacity: .8;
+    }
+    .andco-footer {
+      margin-top: var(--space-5);
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--line-soft);
+    }
+    .andco-collab {
+      font-size: var(--small);
+      color: var(--muted);
+      margin: 0 0 var(--space-3);
+    }
+    .andco-collab a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    .andco-collab a:hover { opacity: .75; }
+    .andco-reach {
+      font-size: var(--small);
+      color: var(--muted);
+      margin-top: 16px;
+      opacity: .7;
+    }
+    @media (max-width: 900px) {
+      .andco-grid { grid-template-columns: 1fr; }
     }
 
     /* APPROACH (4 principles) */
@@ -668,9 +719,9 @@
   <main id="top" class="hero" role="main">
     <div class="wrap hero__grid">
       <div>
-        <p class="kicker" data-i18n="hero.kicker">Cross-border B2B consulting</p>
-        <h1 class="hero__h1" data-i18n="hero.h1">No fluff.<br/>No decks.<br/><em>Just results.</em></h1>
-        <p class="hero__p" data-i18n="hero.p">We operate at the vertex where strategy meets execution — helping B2B companies grow across Europe and Latin America without the overhead of a large firm.</p>
+        <p class="kicker" data-i18n="hero.kicker">Cross-border consulting</p>
+        <h1 class="hero__h1" data-i18n="hero.h1">The right perspective.<br/><em>The right people.</em></h1>
+        <p class="hero__p" data-i18n="hero.p">We operate at the vertex where strategy meets execution — for companies tackling cross-border challenges without the overhead of a large firm.</p>
 
         <div class="hero__cta">
           <a href="#contact" class="btn-primary" data-i18n="hero.cta1">Start a conversation →</a>
@@ -715,7 +766,7 @@
           <div>
             <h3 data-i18n="c1.h">Cross-border growth</h3>
             <p class="cap__hook" data-i18n="c1.hook">You've proven your model locally. Now you need it to work in markets you don't fully understand yet.</p>
-            <p data-i18n="c1.p">We design and execute go-to-market strategies for B2B companies expanding between Europe and Latin America. From market selection and positioning to channel activation and first pipeline — we don't hand you a playbook. We run it with you.</p>
+            <p data-i18n="c1.p">We design and execute go-to-market strategies for companies expanding across borders. From market selection and positioning to channel activation and first pipeline — we don't hand you a playbook. We run it with you.</p>
           </div>
         </div>
 
@@ -724,7 +775,7 @@
           <div>
             <h3 data-i18n="c2.h">Fractional leadership</h3>
             <p class="cap__hook" data-i18n="c2.hook">Your team has the energy. What's missing is the direction.</p>
-            <p data-i18n="c2.p">We step in as fractional CMO, CRO, or strategic advisor — providing senior-level leadership without the commitment of a full-time executive. 20+ years in B2B enterprise software (SAP, Oracle, SaaS) behind every decision.</p>
+            <p data-i18n="c2.p">We step in as fractional CMO, CRO, COO, or strategic advisor — providing senior-level leadership without the commitment of a full-time executive. Decades of senior operating experience behind every decision.</p>
           </div>
         </div>
 
@@ -744,69 +795,55 @@
     </div>
   </section>
 
-  <!-- FOUNDER + NETWORK -->
+  <!-- & CO -->
   <section id="founder">
     <div class="wrap">
-      <p class="kicker" data-i18n="founder.kicker">Who we are</p>
-      <h2 class="section-title" data-i18n="founder.h2">Built on experience. Scaled through partnerships.</h2>
+      <p class="kicker" data-i18n="founder.kicker">& Co</p>
+      <h2 class="section-title" data-i18n="founder.h2">The people who do the work.</h2>
+      <p class="founder__lead" data-i18n="founder.lead">Not a roster of advisors. A small group of operators — each with two decades inside the markets we serve. When the brief calls for it, we bring in specialists from a curated network.</p>
 
-      <div class="founder__grid">
-        <div>
-          <div class="founder__avatar">DA</div>
-          <h3 class="founder__name">Diego Amadruda</h3>
-          <p class="founder__role" data-i18n="founder.role">Founder & CEO</p>
-          <div class="founder__bio">
-            <p data-i18n="founder.bio1">Two decades in B2B enterprise software. SAP and Oracle ecosystems. Marketing, market development, and commercial strategy across Latin America and Europe.</p>
-            <p data-i18n="founder.bio2">Vex&Co was founded on a simple premise: companies growing internationally deserve senior guidance without the overhead — or the attitude — of a large firm.</p>
-          </div>
+      <!-- & Co grid -->
+      <div class="andco-grid">
+
+        <div class="partner">
+          <p class="partner__name"><a href="https://www.linkedin.com/in/diegoamadruda/" target="_blank" rel="noopener">Diego Amadruda</a></p>
+          <p class="partner__role" data-i18n="andco.diego.role">Founder</p>
+          <p class="partner__spec" data-i18n="andco.diego.bio">Twenty years scaling B2B tech go-to-market and partner channels across LATAM and Europe. Former Oracle, SAP.</p>
         </div>
 
-        <div>
-          <h3 class="section-title" style="font-size: clamp(22px, 2.1vw, 30px);" data-i18n="founder.net_h">We don't do everything.<br/>We do what matters.</h3>
-          <p style="color: var(--muted);" data-i18n="founder.net_p">Behind every engagement is a curated network of specialists — assembled per challenge, not per headcount. You get the exact capabilities your project needs, without paying for the ones it doesn't.</p>
-          <div class="geo-tags">
-            <span class="geo-tag">Madrid (HQ)</span>
-            <span class="geo-tag">Santiago</span>
-            <span class="geo-tag">São Paulo</span>
-            <span class="geo-tag">Bogotá</span>
-            <span class="geo-tag">London</span>
-            <span class="geo-tag">Nordics</span>
-            <span class="geo-tag">DACH</span>
-          </div>
-          <p style="font-size: var(--small); color: var(--muted); margin-top: 16px; opacity: .7;" data-i18n="founder.net_note">Network spans Europe and the Americas.</p>
+        <div class="partner">
+          <p class="partner__name"><a href="https://www.linkedin.com/in/hern%C3%A1n-untermann-76b96820/" target="_blank" rel="noopener">Hernán Untermann</a></p>
+          <p class="partner__role" data-i18n="andco.hernan.role">Operations & Cross-Border</p>
+          <p class="partner__spec" data-i18n="andco.hernan.bio">Two decades leading operations and cross-border services. Currently COO at Endalia. Former MAPFRE, Solera.</p>
         </div>
+
+        <div class="partner">
+          <p class="partner__name"><a href="https://www.linkedin.com/in/nicolas-kobilsky-320b87/" target="_blank" rel="noopener">Nicolas Kobilsky</a></p>
+          <p class="partner__role" data-i18n="andco.nicolas.role">Digital Commerce & CX</p>
+          <p class="partner__spec" data-i18n="andco.nicolas.bio">Twenty-five years building digital commerce and customer experience. Co-founder of Qubik Digital. Former SAP.</p>
+        </div>
+
+        <div class="partner">
+          <p class="partner__name"><a href="https://www.linkedin.com/in/fedeperezjacomet/" target="_blank" rel="noopener">Fede Perez Jacomet</a></p>
+          <p class="partner__role" data-i18n="andco.fede.role">Digital Strategy & Creative</p>
+          <p class="partner__spec" data-i18n="andco.fede.bio">Twenty years building digital products and brand strategy for global brands and startups. Co-founder of Grupo Caviar.</p>
+        </div>
+
       </div>
 
-      <!-- Partners -->
-      <div class="partners">
-        <p class="partners__label" data-i18n="partners.label">Strategic partners</p>
-        <div class="partners__grid">
-
-          <div class="partner">
-            <p class="partner__name"><a href="https://www.linkedin.com/in/fedeperezjacomet/" target="_blank" rel="noopener">Fede Perez Jacomet</a></p>
-            <p class="partner__spec" data-i18n="partner.fede">Digital marketing & creative strategy. Experience with global brands (Virgin, PayPal, Ford, Heineken).</p>
-            <p class="partner__geo">Madrid · LATAM · Europe</p>
-          </div>
-
-          <div class="partner">
-            <p class="partner__name"><a href="https://www.qubikcommerce.com" target="_blank" rel="noopener">Qubik Commerce</a></p>
-            <p class="partner__spec" data-i18n="partner.qubik">eCommerce & SAP Commerce specialists. Composable commerce implementation and consulting.</p>
-            <p class="partner__geo">LATAM</p>
-          </div>
-
-          <div class="partner">
-            <p class="partner__name"><a href="https://www.linkedin.com/in/miannino/" target="_blank" rel="noopener">Marcelo Iannino</a></p>
-            <p class="partner__spec" data-i18n="partner.marcelo">Supply chain management. Deep expertise in operations and logistics across LATAM and European markets.</p>
-            <p class="partner__geo">Madrid · LATAM · Europe</p>
-          </div>
-
-          <div class="partner">
-            <p class="partner__name"><a href="https://www.linkedin.com/in/hern%C3%A1n-untermann-76b96820/" target="_blank" rel="noopener">Hernán Untermann</a></p>
-            <p class="partner__spec" data-i18n="partner.hernan">Operations & IT services. Extensive track record in operational management across LATAM and Europe.</p>
-            <p class="partner__geo">Madrid · LATAM · Europe</p>
-          </div>
-
+      <!-- Collaboration & reach -->
+      <div class="andco-footer">
+        <p class="andco-collab" data-i18n="andco.collab">VEX &amp; Co partners with <a href="https://www.qubikcommerce.com" target="_blank" rel="noopener">Qubik Commerce</a> on digital commerce engagements across Europe and LATAM.</p>
+        <div class="geo-tags">
+          <span class="geo-tag">Madrid (HQ)</span>
+          <span class="geo-tag">Santiago</span>
+          <span class="geo-tag">Brasília</span>
+          <span class="geo-tag">Buenos Aires</span>
+          <span class="geo-tag">London</span>
+          <span class="geo-tag">Nordics</span>
+          <span class="geo-tag">DACH</span>
         </div>
+        <p class="andco-reach" data-i18n="andco.reach">Network spans Europe and the Americas.</p>
       </div>
     </div>
   </section>
@@ -862,25 +899,25 @@
     <div class="wrap">
       <div class="proof__stats">
         <div>
-          <p class="stat__value">20+</p>
-          <p class="stat__label" data-i18n="proof.s1">Years in B2B enterprise</p>
+          <p class="stat__value">80+</p>
+          <p class="stat__label" data-i18n="proof.s1">Years of combined experience</p>
         </div>
         <div>
-          <p class="stat__value">2</p>
-          <p class="stat__label" data-i18n="proof.s2">Continents, one network</p>
+          <p class="stat__value" data-i18n="proof.s2v">Cross-border</p>
+          <p class="stat__label" data-i18n="proof.s2">One curated network</p>
         </div>
         <div>
-          <p class="stat__value">SAP & Oracle</p>
-          <p class="stat__label" data-i18n="proof.s3">Ecosystem expertise</p>
+          <p class="stat__value" data-i18n="proof.s3v">Across sectors</p>
+          <p class="stat__label" data-i18n="proof.s3">Where senior judgment matters</p>
         </div>
         <div>
           <p class="stat__value" data-i18n="proof.s4v">Fractional</p>
-          <p class="stat__label" data-i18n="proof.s4">CMO / CRO / Advisory</p>
+          <p class="stat__label" data-i18n="proof.s4">CMO / CRO / COO / Advisory</p>
         </div>
       </div>
 
       <div class="proof__card">
-        <p data-i18n="proof.text">We've helped B2B companies enter new markets, build pipeline, and close their first international deals. We work with SaaS companies, software consultancies, and service firms navigating growth between Europe and Latin America.</p>
+        <p data-i18n="proof.text">We work with companies tackling cross-border challenges — across markets, industries, and disciplines. We bring senior judgment to projects that don't fit a template.</p>
         <p class="ref" data-i18n="proof.ref">References available on request.</p>
       </div>
     </div>
@@ -931,9 +968,9 @@
         "nav.approach": "Approach",
         "nav.cta": "Get in touch",
 
-        "hero.kicker": "Cross-border B2B consulting",
-        "hero.h1": "No fluff.<br/>No decks.<br/><em>Just results.</em>",
-        "hero.p": "We operate at the vertex where strategy meets execution — helping B2B companies grow across Europe and Latin America without the overhead of a large firm.",
+        "hero.kicker": "Cross-border consulting",
+        "hero.h1": "The right perspective.<br/><em>The right people.</em>",
+        "hero.p": "We operate at the vertex where strategy meets execution — for companies tackling cross-border challenges without the overhead of a large firm.",
         "hero.cta1": "Start a conversation →",
         "hero.cta2": "See how we work",
 
@@ -941,29 +978,29 @@
         "caps.h2": "Three ways we move the needle.",
         "c1.h": "Cross-border growth",
         "c1.hook": "You've proven your model locally. Now you need it to work in markets you don't fully understand yet.",
-        "c1.p": "We design and execute go-to-market strategies for B2B companies expanding between Europe and Latin America. From market selection and positioning to channel activation and first pipeline — we don't hand you a playbook. We run it with you.",
+        "c1.p": "We design and execute go-to-market strategies for companies expanding across borders. From market selection and positioning to channel activation and first pipeline — we don't hand you a playbook. We run it with you.",
         "c2.h": "Fractional leadership",
         "c2.hook": "Your team has the energy. What's missing is the direction.",
-        "c2.p": "We step in as fractional CMO, CRO, or strategic advisor — providing senior-level leadership without the commitment of a full-time executive. 20+ years in B2B enterprise software (SAP, Oracle, SaaS) behind every decision.",
+        "c2.p": "We step in as fractional CMO, CRO, COO, or strategic advisor — providing senior-level leadership without the commitment of a full-time executive. Decades of senior operating experience behind every decision.",
         "c3.h": "Partner orchestration",
         "c3.hook": "You don't need five consultants. You need one call.",
         "c3.p": "Complex projects need more than strategy — they need the right people, coordinated. We assemble and lead specialized teams across markets and disciplines, so you get integrated execution instead of fragmented advice.",
         "caps.cta": "These sound like your challenges? Let's talk →",
 
-        "founder.kicker": "Who we are",
-        "founder.h2": "Built on experience. Scaled through partnerships.",
-        "founder.role": "Founder & CEO",
-        "founder.bio1": "Two decades in B2B enterprise software. SAP and Oracle ecosystems. Marketing, market development, and commercial strategy across Latin America and Europe.",
-        "founder.bio2": "Vex&Co was founded on a simple premise: companies growing internationally deserve senior guidance without the overhead — or the attitude — of a large firm.",
-        "founder.net_h": "We don't do everything.<br/>We do what matters.",
-        "founder.net_p": "Behind every engagement is a curated network of specialists — assembled per challenge, not per headcount. You get the exact capabilities your project needs, without paying for the ones it doesn't.",
-        "founder.net_note": "Network spans Europe and the Americas.",
+        "founder.kicker": "& Co",
+        "founder.h2": "The people who do the work.",
+        "founder.lead": "Not a roster of advisors. A small group of operators — each with two decades inside the markets we serve. When the brief calls for it, we bring in specialists from a curated network.",
 
-        "partners.label": "Strategic partners",
-        "partner.fede": "Digital marketing & creative strategy. Experience with global brands (Virgin, PayPal, Ford, Heineken).",
-        "partner.qubik": "eCommerce & SAP Commerce specialists. Composable commerce implementation and consulting.",
-        "partner.marcelo": "Supply chain management. Deep expertise in operations and logistics across LATAM and European markets.",
-        "partner.hernan": "Operations & IT services. Extensive track record in operational management across LATAM and Europe.",
+        "andco.diego.role": "Founder",
+        "andco.diego.bio": "Twenty years scaling B2B tech go-to-market and partner channels across LATAM and Europe. Former Oracle, SAP.",
+        "andco.hernan.role": "Operations & Cross-Border",
+        "andco.hernan.bio": "Two decades leading operations and cross-border services. Currently COO at Endalia. Former MAPFRE, Solera.",
+        "andco.nicolas.role": "Digital Commerce & CX",
+        "andco.nicolas.bio": "Twenty-five years building digital commerce and customer experience. Co-founder of Qubik Digital. Former SAP.",
+        "andco.fede.role": "Digital Strategy & Creative",
+        "andco.fede.bio": "Twenty years building digital products and brand strategy for global brands and startups. Co-founder of Grupo Caviar.",
+        "andco.collab": "VEX &amp; Co partners with <a href=\"https://www.qubikcommerce.com\" target=\"_blank\" rel=\"noopener\">Qubik Commerce</a> on digital commerce engagements across Europe and LATAM.",
+        "andco.reach": "Network spans Europe and the Americas.",
 
         "approach.kicker": "Our approach",
         "approach.h2": "How we work.",
@@ -977,12 +1014,14 @@
         "p4.p": "Lean structure doesn't mean limited reach. It means no dead weight. We scale through our network — adding the right capabilities for each project without adding layers.",
         "approach.cta": "Sound like a fit? Tell us what you're working on →",
 
-        "proof.s1": "Years in B2B enterprise",
-        "proof.s2": "Continents, one network",
-        "proof.s3": "Ecosystem expertise",
+        "proof.s1": "Years of combined experience",
+        "proof.s2v": "Cross-border",
+        "proof.s2": "One curated network",
+        "proof.s3v": "Across sectors",
+        "proof.s3": "Where senior judgment matters",
         "proof.s4v": "Fractional",
-        "proof.s4": "CMO / CRO / Advisory",
-        "proof.text": "We've helped B2B companies enter new markets, build pipeline, and close their first international deals. We work with SaaS companies, software consultancies, and service firms navigating growth between Europe and Latin America.",
+        "proof.s4": "CMO / CRO / COO / Advisory",
+        "proof.text": "We work with companies tackling cross-border challenges — across markets, industries, and disciplines. We bring senior judgment to projects that don't fit a template.",
         "proof.ref": "References available on request.",
 
         "contact.h2": "Tell us the problem. <span>We'll tell you if we can solve it — and if we can't, we'll tell you that too.</span>",
@@ -1000,9 +1039,9 @@
         "nav.approach": "Enfoque",
         "nav.cta": "Contacto",
 
-        "hero.kicker": "Consultoría B2B cross-border",
-        "hero.h1": "Sin humo.<br/>Sin decks.<br/><em>Solo resultados.</em>",
-        "hero.p": "Operamos en el vértice donde la estrategia se encuentra con la ejecución — ayudando a empresas B2B a crecer entre Europa y América Latina sin la estructura de una gran firma.",
+        "hero.kicker": "Consultoría cross-border",
+        "hero.h1": "La perspectiva correcta.<br/><em>Las personas correctas.</em>",
+        "hero.p": "Operamos en el vértice donde la estrategia se encuentra con la ejecución — para empresas que enfrentan desafíos cross-border sin la estructura de una gran firma.",
         "hero.cta1": "Iniciar una conversación →",
         "hero.cta2": "Cómo trabajamos",
 
@@ -1010,29 +1049,29 @@
         "caps.h2": "Tres formas de mover la aguja.",
         "c1.h": "Crecimiento cross-border",
         "c1.hook": "Tu modelo funciona en tu mercado. Ahora necesitas que funcione donde todavía no conoces las reglas.",
-        "c1.p": "Diseñamos y ejecutamos estrategias go-to-market para empresas B2B que se expanden entre Europa y América Latina. Desde la selección de mercado y posicionamiento hasta la activación de canales y primer pipeline — no entregamos un playbook. Lo corremos contigo.",
+        "c1.p": "Diseñamos y ejecutamos estrategias go-to-market para empresas que se expanden cross-border. Desde la selección de mercado y posicionamiento hasta la activación de canales y primer pipeline — no entregamos un playbook. Lo corremos contigo.",
         "c2.h": "Liderazgo fractional",
         "c2.hook": "Tu equipo tiene la energía. Lo que falta es la dirección.",
-        "c2.p": "Entramos como CMO, CRO o advisor estratégico fractional — aportando liderazgo senior sin el compromiso de un ejecutivo a tiempo completo. Más de 20 años en software enterprise B2B (SAP, Oracle, SaaS) detrás de cada decisión.",
+        "c2.p": "Entramos como CMO, CRO, COO o advisor estratégico fractional — aportando liderazgo senior sin el compromiso de un ejecutivo a tiempo completo. Décadas de experiencia operativa senior detrás de cada decisión.",
         "c3.h": "Orquestación de partners",
         "c3.hook": "No necesitas cinco consultores. Necesitas una sola llamada.",
         "c3.p": "Los proyectos complejos necesitan más que estrategia — necesitan a las personas correctas, coordinadas. Ensamblamos y lideramos equipos especializados en distintos mercados y disciplinas, para que obtengas ejecución integrada en vez de consejos fragmentados.",
         "caps.cta": "¿Te suenan estos desafíos? Hablemos →",
 
-        "founder.kicker": "Quiénes somos",
-        "founder.h2": "Construido sobre experiencia. Escalado a través de partnerships.",
-        "founder.role": "Fundador y CEO",
-        "founder.bio1": "Dos décadas en software enterprise B2B. Ecosistemas SAP y Oracle. Marketing, desarrollo de mercado y estrategia comercial en América Latina y Europa.",
-        "founder.bio2": "Vex&Co se fundó sobre una premisa simple: las empresas que crecen internacionalmente merecen guía senior sin el overhead — ni la actitud — de una gran firma.",
-        "founder.net_h": "No hacemos todo.<br/>Hacemos lo que importa.",
-        "founder.net_p": "Detrás de cada proyecto hay una red curada de especialistas — ensamblada según el desafío, no según el headcount. Accedes a las capacidades exactas que tu proyecto necesita, sin pagar por las que no.",
-        "founder.net_note": "Red en Europa y las Américas.",
+        "founder.kicker": "& Co",
+        "founder.h2": "Las personas que hacen el trabajo.",
+        "founder.lead": "No un panel de advisors. Un grupo pequeño de operadores — cada uno con dos décadas dentro de los mercados que servimos. Cuando el proyecto lo pide, sumamos especialistas de una red curada.",
 
-        "partners.label": "Partners estratégicos",
-        "partner.fede": "Marketing digital y estrategia creativa. Experiencia con marcas globales (Virgin, PayPal, Ford, Heineken).",
-        "partner.qubik": "Especialistas en eCommerce y SAP Commerce. Implementación y consultoría en composable commerce.",
-        "partner.marcelo": "Supply chain management. Amplia experiencia en operaciones y logística en mercados de LATAM y Europa.",
-        "partner.hernan": "Operaciones y servicios IT. Extensa trayectoria en gestión operacional en LATAM y Europa.",
+        "andco.diego.role": "Founder",
+        "andco.diego.bio": "Veinte años escalando go-to-market y canales de partners para tech B2B entre LATAM y Europa. Ex Oracle, SAP.",
+        "andco.hernan.role": "Operaciones & Cross-Border",
+        "andco.hernan.bio": "Dos décadas liderando operaciones y servicios cross-border. Actualmente COO en Endalia. Ex MAPFRE, Solera.",
+        "andco.nicolas.role": "Commerce Digital & CX",
+        "andco.nicolas.bio": "Veinticinco años construyendo commerce digital y customer experience. Co-fundador de Qubik Digital. Ex SAP.",
+        "andco.fede.role": "Estrategia Digital & Creatividad",
+        "andco.fede.bio": "Veinte años desarrollando productos digitales y estrategia de marca para marcas globales y startups. Co-fundador de Grupo Caviar.",
+        "andco.collab": "VEX &amp; Co colabora con <a href=\"https://www.qubikcommerce.com\" target=\"_blank\" rel=\"noopener\">Qubik Commerce</a> en proyectos de commerce digital en Europa y LATAM.",
+        "andco.reach": "Red en Europa y las Américas.",
 
         "approach.kicker": "Nuestro enfoque",
         "approach.h2": "Cómo trabajamos.",
@@ -1046,12 +1085,14 @@
         "p4.p": "Estructura ágil no significa alcance limitado. Significa cero peso muerto. Escalamos a través de nuestra red — sumando las capacidades correctas para cada proyecto sin añadir capas.",
         "approach.cta": "¿Encaja con lo que necesitas? Cuéntanos en qué estás trabajando →",
 
-        "proof.s1": "Años en enterprise B2B",
-        "proof.s2": "Continentes, una red",
-        "proof.s3": "Expertise en ecosistema",
+        "proof.s1": "Años de experiencia combinada",
+        "proof.s2v": "Cross-border",
+        "proof.s2": "Una red curada",
+        "proof.s3v": "Multi-sector",
+        "proof.s3": "Donde el criterio senior importa",
         "proof.s4v": "Fractional",
-        "proof.s4": "CMO / CRO / Advisory",
-        "proof.text": "Hemos ayudado a empresas B2B a entrar en nuevos mercados, construir pipeline y cerrar sus primeros deals internacionales. Trabajamos con empresas SaaS, consultoras de software y firmas de servicios que navegan el crecimiento entre Europa y América Latina.",
+        "proof.s4": "CMO / CRO / COO / Advisory",
+        "proof.text": "Trabajamos con empresas que enfrentan desafíos cross-border — en distintos mercados, industrias y disciplinas. Aportamos criterio senior a proyectos que no encajan en una plantilla.",
         "proof.ref": "Referencias disponibles bajo solicitud.",
 
         "contact.h2": "Cuéntenos el problema. <span>Le diremos si podemos resolverlo — y si no, también se lo diremos.</span>",
