@@ -256,34 +256,48 @@
     /* PARTNERS (Bloque 3 — Cómo trabajamos) */
     .partners-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 56px 64px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 56px 48px;
       margin-top: var(--space-5);
     }
     .partner {
       border-top: 1px solid var(--line);
       padding-top: 22px;
       display: grid;
-      gap: 8px;
+      gap: 6px;
     }
     .partner__head {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       gap: 16px;
+      margin-bottom: 12px;
+    }
+    .partner__kicker {
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0;
     }
     .partner__name {
       font-family: var(--serif);
       font-weight: 600;
-      font-size: 22px;
+      font-size: 24px;
       letter-spacing: .01em;
-      line-height: 1.2;
+      line-height: 1.15;
       margin: 0;
     }
-    .partner__link {
-      font-size: var(--small);
+    .partner__title {
+      font-size: 14px;
       color: var(--muted);
-      letter-spacing: .06em;
+      margin: 2px 0 0;
+      font-style: italic;
+    }
+    .partner__link {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: .08em;
       text-transform: uppercase;
       white-space: nowrap;
     }
@@ -296,23 +310,26 @@
     .partner__link:hover .arrow {
       transform: translate(2px, -2px);
     }
-    .partner__role {
-      font-size: var(--small);
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin: 0;
-    }
     .partner__expertise {
-      margin: 12px 0 0;
+      margin: 18px 0 0;
       font-size: 15px;
       color: var(--ink);
+      line-height: 1.5;
     }
     .partner__geo {
       margin: 4px 0 0;
-      font-size: 14px;
+      font-size: 13px;
       color: var(--muted);
       letter-spacing: .02em;
+    }
+    .partner__bio {
+      margin: 18px 0 0;
+      padding-top: 14px;
+      border-top: 1px solid var(--line-soft);
+      font-size: 13px;
+      color: var(--muted);
+      font-style: italic;
+      letter-spacing: .01em;
     }
 
     /* CONTACT */
@@ -497,42 +514,38 @@
       <div class="partners-grid">
         <article class="partner">
           <div class="partner__head">
-            <h3 class="partner__name">Marcelo Iannino</h3>
-            <a class="partner__link" href="https://linkedin.com/in/miannino" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
-          </div>
-          <p class="partner__role" data-i18n="pt1.role">Strategic partner</p>
-          <p class="partner__expertise" data-i18n="pt1.exp">Supply chain · ERP · Business intelligence</p>
-          <p class="partner__geo">Buenos Aires · Madrid</p>
-        </article>
-
-        <article class="partner">
-          <div class="partner__head">
-            <h3 class="partner__name">Hernán Untermann</h3>
+            <p class="partner__kicker" data-i18n="pt.kicker">Strategic partner</p>
             <a class="partner__link" href="https://linkedin.com/in/hernán-untermann-76b96820" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
           </div>
-          <p class="partner__role" data-i18n="pt2.role">Strategic partner</p>
-          <p class="partner__expertise" data-i18n="pt2.exp">International operations · Customer success · IT services</p>
-          <p class="partner__geo">Madrid · LATAM</p>
+          <h3 class="partner__name">Hernán Untermann</h3>
+          <p class="partner__title" data-i18n="pt1.title">Independent advisor</p>
+          <p class="partner__expertise" data-i18n="pt1.exp">Insurance · Assistance · BPO operations</p>
+          <p class="partner__geo">Europe · Middle East · Africa</p>
+          <p class="partner__bio" data-i18n="pt1.bio">Ex Axa Assistance, MAPFRE</p>
         </article>
 
         <article class="partner">
           <div class="partner__head">
-            <h3 class="partner__name">Qubik Digital</h3>
-            <a class="partner__link" href="https://www.qubikcommerce.com" target="_blank" rel="noopener">Website <span class="arrow">↗</span></a>
+            <p class="partner__kicker" data-i18n="pt.kicker2">Strategic partner</p>
+            <a class="partner__link" href="https://www.linkedin.com/in/nicolaskobilsky-320b87" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
           </div>
-          <p class="partner__role" data-i18n="pt3.role">Alliance partner</p>
-          <p class="partner__expertise" data-i18n="pt3.exp">eCommerce platforms · SAP Commerce · B2B/B2C implementations</p>
-          <p class="partner__geo">Madrid · Buenos Aires</p>
+          <h3 class="partner__name">Nicolás Kobilsky</h3>
+          <p class="partner__title" data-i18n="pt2.title">Co-Founder, Qubik Digital</p>
+          <p class="partner__expertise" data-i18n="pt2.exp">eCommerce · Custom software · Digital transformation</p>
+          <p class="partner__geo">LATAM</p>
+          <p class="partner__bio" data-i18n="pt2.bio">Building Qubik since 2009</p>
         </article>
 
         <article class="partner">
           <div class="partner__head">
-            <h3 class="partner__name">Grupo Caviar</h3>
-            <a class="partner__link" href="https://www.grupocaviar.com" target="_blank" rel="noopener">Website <span class="arrow">↗</span></a>
+            <p class="partner__kicker" data-i18n="pt.kicker3">Strategic partner</p>
+            <a class="partner__link" href="https://www.linkedin.com/in/fedeperezjacomet" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
           </div>
-          <p class="partner__role" data-i18n="pt4.role">Alliance partner</p>
-          <p class="partner__expertise" data-i18n="pt4.exp">Digital products · Brand strategy · UX/UI</p>
-          <p class="partner__geo">Buenos Aires · Madrid</p>
+          <h3 class="partner__name">Federico Perez Jacomet</h3>
+          <p class="partner__title" data-i18n="pt3.title">Independent consultant</p>
+          <p class="partner__expertise" data-i18n="pt3.exp">Digital strategy · Brand · Product · Data</p>
+          <p class="partner__geo">Europe · LATAM</p>
+          <p class="partner__bio" data-i18n="pt3.bio">Co-Founder Grupo Caviar (17 years)</p>
         </article>
       </div>
     </div>
@@ -595,14 +608,18 @@
         "partners.kicker": "How we work",
         "partners.h2": "A small core. A defined bench.",
         "partners.intro": "VEX & Co operates with a deliberate structure: a small core that owns the relationship and the result, and a defined bench of partners we have worked with for years. We do not assemble teams from a database. Each engagement is staffed with people whose work we know first-hand.",
-        "pt1.role": "Strategic partner",
-        "pt1.exp": "Supply chain · ERP · Business intelligence",
-        "pt2.role": "Strategic partner",
-        "pt2.exp": "International operations · Customer success · IT services",
-        "pt3.role": "Alliance partner",
-        "pt3.exp": "eCommerce platforms · SAP Commerce · B2B/B2C implementations",
-        "pt4.role": "Alliance partner",
-        "pt4.exp": "Digital products · Brand strategy · UX/UI",
+        "pt.kicker": "Strategic partner",
+        "pt.kicker2": "Strategic partner",
+        "pt.kicker3": "Strategic partner",
+        "pt1.title": "Independent advisor",
+        "pt1.exp": "Insurance · Assistance · BPO operations",
+        "pt1.bio": "Ex Axa Assistance, MAPFRE",
+        "pt2.title": "Co-Founder, Qubik Digital",
+        "pt2.exp": "eCommerce · Custom software · Digital transformation",
+        "pt2.bio": "Building Qubik since 2009",
+        "pt3.title": "Independent consultant",
+        "pt3.exp": "Digital strategy · Brand · Product · Data",
+        "pt3.bio": "Co-Founder Grupo Caviar (17 years)",
 
         "contact.h2": "Let's talk.",
         "contact.p": "Ready to explore how we can help?",
@@ -636,14 +653,18 @@
         "partners.kicker": "Cómo trabajamos",
         "partners.h2": "Un núcleo pequeño. Un bench definido.",
         "partners.intro": "VEX & Co opera con una estructura deliberada: un núcleo pequeño que asume la relación y el resultado, y un bench definido de partners con los que hemos trabajado durante años. No armamos equipos desde una base de datos. Cada proyecto se cubre con personas cuyo trabajo conocemos de primera mano.",
-        "pt1.role": "Partner estratégico",
-        "pt1.exp": "Supply chain · ERP · Business intelligence",
-        "pt2.role": "Partner estratégico",
-        "pt2.exp": "Operaciones internacionales · Customer success · IT services",
-        "pt3.role": "Alianza estratégica",
-        "pt3.exp": "Plataformas eCommerce · SAP Commerce · Implementaciones B2B/B2C",
-        "pt4.role": "Alianza estratégica",
-        "pt4.exp": "Productos digitales · Brand strategy · UX/UI",
+        "pt.kicker": "Partner estratégico",
+        "pt.kicker2": "Partner estratégico",
+        "pt.kicker3": "Partner estratégico",
+        "pt1.title": "Asesor independiente",
+        "pt1.exp": "Insurance · Assistance · BPO operations",
+        "pt1.bio": "Ex Axa Assistance, MAPFRE",
+        "pt2.title": "Co-Fundador, Qubik Digital",
+        "pt2.exp": "eCommerce · Desarrollo a medida · Transformación digital",
+        "pt2.bio": "Construyendo Qubik desde 2009",
+        "pt3.title": "Consultor independiente",
+        "pt3.exp": "Estrategia digital · Brand · Producto · Data",
+        "pt3.bio": "Co-Fundador Grupo Caviar (17 años)",
 
         "contact.h2": "Hablemos.",
         "contact.p": "¿Listo para explorar cómo podemos ayudarte?",
